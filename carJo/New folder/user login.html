@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carjo - Login</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #e9ecef; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .login-box { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+    h2 { text-align: center; margin-bottom: 24px; color: #333; }
+    input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
+    button { width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
+    button:hover { background-color: #45a049; }
+    .error { color: red; text-align: center; display: none; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login to Carjo</h2>
+    <input type="text" id="username" placeholder="Your Name">
+    <input type="email" id="useremail" placeholder="Your Email">
+    <button onclick="loginUser()">Continue</button>
+    <div class="error" id="errorMsg">Please enter valid name and email.</div>
+  </div>  <script>
+    function loginUser() {
+      const name = document.getElementById('username').value.trim();
+      const email = document.getElementById('useremail').value.trim();
+      const error = document.getElementById('errorMsg');
+
+      if (name && email && email.includes('@')) {
+        localStorage.setItem('username', name);
+        localStorage.setItem('useremail', email);
+        window.location.href = 'index.html';
+      } else {
+        error.style.display = 'block';
+      }
+    }
+  </script></body>
+</html>

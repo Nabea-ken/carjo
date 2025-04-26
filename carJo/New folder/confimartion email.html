@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carjo - Order Confirmation</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; padding: 20px; }
+  .email-container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+  h1 { color: #4CAF50; text-align: center; }
+  p { font-size: 16px; line-height: 1.5; }
+  .order-details { margin-top: 20px; }
+  .order-details table { width: 100%; border-collapse: collapse; }
+  .order-details th, .order-details td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
+  .order-summary { margin-top: 20px; font-size: 18px; font-weight: bold; text-align: right; }
+  .footer { margin-top: 30px; text-align: center; font-size: 14px; color: #777; }
+</style>
+</head>
+<body>
+<div class="email-container">
+  <h1>Thank You for Your Purchase!</h1>
+  <p>Hello [Customer Name],</p>
+  <p>Thank you for choosing <strong>Carjo</strong> for your car needs. Below is the summary of your recent purchase:</p>  <div class="order-details">
+    <table>
+      <thead>
+        <tr>
+          <th>Car</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Repeat this TR for each item -->
+        <tr>
+          <td>Tesla Model 3</td>
+          <td>1</td>
+          <td>$35,000</td>
+        </tr>
+        <tr>
+          <td>BMW X5</td>
+          <td>1</td>
+          <td>$55,000</td>
+        </tr>
+        <!-- End repeat -->
+      </tbody>
+    </table>
+  </div>  <div class="order-summary">
+    Total Paid: $90,000
+  </div>  <p>If you have any questions, feel free to contact our support team.</p>
+  <p>We hope you enjoy your new car!</p>  <div class="footer">
+    &copy; 2025 Carjo. All rights reserved.
+  </div>
+</div>
+</body>
+</html>

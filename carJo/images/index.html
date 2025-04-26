@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carjo - Buy & Rent Cars</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Carjo</div>
+  <input type="text" id="searchInput" placeholder="Search for cars...">
+  <div id="cartIcon">Cart (<span id="cartCount">0</span>)</div>
+</header>
+
+<section id="filters">
+  <select id="brandFilter">
+    <option value="">All Brands</option>
+    <option value="Tesla">Tesla</option>
+    <option value="BMW">BMW</option>
+    <option value="Toyota">Toyota</option>
+    <option value="Honda">Honda</option>
+  </select>
+
+  <select id="fuelFilter">
+    <option value="">All Fuel Types</option>
+    <option value="Electric">Electric</option>
+    <option value="Petrol">Petrol</option>
+    <option value="Diesel">Diesel</option>
+    <option value="Hybrid">Hybrid</option>
+  </select>
+
+  <input type="range" id="priceFilter" min="5000" max="100000" value="100000" step="5000">
+  <span>Max Price: $<span id="priceValue">100000</span></span>
+</section>
+
+<section id="carListings">
+  <!-- Car cards will be injected here dynamically -->
+</section>
+
+<div id="pagination"></div>
+
+<div id="loadingScreen">
+  <div class="loader"></div>
+  <p>Loading...</p>
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

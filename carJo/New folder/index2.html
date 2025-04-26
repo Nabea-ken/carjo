@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carjo - Car Listings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0D1B2A;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .hero {
+      background-color: #1B263B;
+      color: white;
+      padding: 60px 30px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 42px;
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    .filters button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #415A77;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .filters button.active {
+      background-color: #E0E1DD;
+      color: #000;
+    }
+    .cars {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px 30px;
+    }
+    .car-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+    }
+    .car-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    footer {
+      background-color: #0D1B2A;
+      color: white;
+      text-align: center;
+      padding: 20px 30px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><h2>Carjo</h2></div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Browse Cars</a>
+    <a href="#">Accessories</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Browse Our Cars</h1>
+</section>
+
+<section class="filters">
+  <button class="filter-btn active" data-brand="all">All</button>
+  <button class="filter-btn" data-brand="Toyota">Toyota</button>
+  <button class="filter-btn" data-brand="BMW">BMW</button>
+  <button class="filter-btn" data-brand="Ford">Ford</button>
+</section>
+
+<section class="cars" id="car-list">
+  <div class="car-card" data-brand="Toyota">
+    <img src="https://source.unsplash.com/250x140/?toyota" alt="Toyota">
+    <h3>Toyota Corolla</h3>
+    <p>Reliable and efficient sedan.</p>
+  </div>
+  <div class="car-card" data-brand="BMW">
+    <img src="https://source.unsplash.com/250x140/?bmw" alt="BMW">
+    <h3>BMW 3 Series</h3>
+    <p>Luxury and performance in one.</p>
+  </div>
+  <div class="car-card" data-brand="Ford">
+    <img src="https://source.unsplash.com/250x140/?ford" alt="Ford">
+    <h3>Ford Mustang</h3>
+    <p>Powerful muscle car with style.</p>
+  </div>
+  <div class="car-card" data-brand="Toyota">
+    <img src="https://source.unsplash.com/250x140/?toyota-suv" alt="Toyota">
+    <h3>Toyota RAV4</h3>
+    <p>Spacious and family-friendly SUV.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Carjo. All rights reserved.</p>
+</footer>
+
+<script>
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const carCards = document.querySelectorAll(".car-card");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      document.querySelector(".filter-btn.active").classList.remove("active");
+      button.classList.add("active");
+
+      const brand = button.getAttribute("data-brand");
+
+      carCards.forEach(card => {
+        if (brand === "all" || card.getAttribute("data-brand") === brand) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

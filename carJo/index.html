@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carjo - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="loader">Loading...</div>
+
+  <header>
+    <h1>Carjo</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+      <a href="accessories.html">Accessories</a>
+      <a href="orders.html">My Rentals/Orders</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <div id="userSection"></div>
+  </header>
+
+  <section class="hero">
+    <h1>Find Your Dream Car</h1>
+    <p>Buy, Rent or Hire the best cars at Carjo.</p>
+  </section>
+
+  <div class="filters">
+    <select id="brandFilter">
+      <option value="">All Brands</option>
+    </select>
+
+    <select id="fuelFilter">
+      <option value="">All Fuel Types</option>
+      <option value="Petrol">Petrol</option>
+      <option value="Diesel">Diesel</option>
+      <option value="Electric">Electric</option>
+      <option value="Hybrid">Hybrid</option>
+    </select>
+
+    <input type="number" id="yearFilter" placeholder="Min Year">
+    <input type="number" id="priceFilter" placeholder="Max Price">
+    <input type="text" id="searchInput" placeholder="Search by model">
+
+    <button onclick="applyFilters()">Apply Filters</button>
+  </div>
+
+  <div id="carList"></div>
+
+  <div id="pagination"></div>
+
+  <footer>
+    <p>&copy; 2025 Carjo. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
