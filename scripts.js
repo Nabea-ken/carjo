@@ -249,6 +249,7 @@ function renderOrders() {
 document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
   showUserInNav();
+  renderCars(); // <- This MUST be here!
 });
 
 
