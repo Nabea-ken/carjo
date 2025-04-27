@@ -250,3 +250,10 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
   showUserInNav();
 });
+
+
+// Toggle Mobile Menu
+function toggleMenu() {
+  const navMenu = document.getElementById('navMenu');
+  navMenu.classList.toggle('open');
+}
