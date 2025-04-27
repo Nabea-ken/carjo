@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Carjo - Home</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <script src="scripts.js" defer></script>
 </head>
 <body>
   <div class="loader">Loading...</div>
 
   <header>
     <h1>Carjo</h1>
-    <nav>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav id="navMenu">
       <a href="index.html">Home</a>                
       <a href="accessories.html">Accessories</a>
       <a href="orders.html">My Rentals/Orders</a>
       <a href="cart.html">Cart</a>
       <a href="login.html">Login</a>
-	  <a href="blog.html">Blog</a>
-	  <a href="about.html">About Us</a>
-	  <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div id="userSection"></div>
   </header>
@@ -51,9 +52,9 @@
   </div>
 
   <div id="carList">
-  <section id="carsContainer">
-  <!-- Cars will be injected here dynamically by JavaScript -->
-  </section>
+    <section id="carsContainer">
+    <!-- Cars will be injected here dynamically by JavaScript -->
+    </section>
   </div>
 
   <div id="pagination"></div>
