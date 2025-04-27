@@ -1,5 +1,12 @@
 // scripts.js
-
+// Dummy spare parts
+const spareParts = [
+  { id: 1, name: "Brake Pads", price: 120, img: "images/spare/brake-pads.jpg" },
+  { id: 2, name: "Air Filter", price: 50, img: "images/spare/air-filter.jpg" },
+  { id: 3, name: "Oil Filter", price: 40, img: "images/spare/oil-filter.jpg" },
+  { id: 4, name: "Battery", price: 200, img: "images/spare/car-battery.jpg" },
+  { id: 5, name: "Wiper Blades", price: 25, img: "images/spare/wiper-blades.jpg" }
+];
 // Dummy car data
 const cars = [
   { id: 1, brand: "Tesla", model: "Model 3", fuel: "Electric", year: 2022, price: 45000, img: "images/tesla-model3.jpg" },
@@ -34,7 +41,35 @@ function saveUsers() {
 function saveLoggedInUser() {
   localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
 }
+// Render spare parts (for index.html)
+function renderSpareParts() {
+  const sparePartsList = document.getElementById('sparePartsList');
+  if (!sparePartsList) return;
 
+  sparePartsList.innerHTML = "";
+
+  spareParts.forEach(part => {
+    const partCard = document.createElement('div');
+    partCard.className = "car-card"; // reuse the car card style
+    partCard.innerHTML = `
+      <img src="${part.img}" alt="${part.name}">
+      <h3>${part.name}</h3>
+      <p>Price: $${part.price}</p>
+      <button onclick="addSpareToCart(${part.id})">Add to Cart</button>
+    `;
+    sparePartsList.appendChild(partCard);
+  });
+}
+
+function addSpareToCart(id) {
+  const part = spareParts.find(p => p.id === id);
+  if (!part) return;
+  
+  cart.push(part);
+  saveCart();
+  updateCartCount();
+  alert(`${part.name} added to cart!`);
+}
 // Render Cars (for index.html)
 function renderCars() {
   const carList = document.getElementById('carList');
@@ -250,6 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
   showUserInNav();
   renderCars(); // <- This MUST be here!
+  
+  renderSpareParts(); // Add this (it will only render if #sparePartsList exists)
 });
 
 
