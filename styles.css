@@ -257,3 +257,66 @@ footer {
 .form-container button:hover {
   background: #084298;
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+
+  header nav a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .filters select,
+  .filters input,
+  .filters button {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  #carList {
+    margin: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .car-card img {
+    height: 150px;
+  }
+
+  .cart-item, .order-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cart-item img, .order-item img {
+    margin-bottom: 10px;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+
