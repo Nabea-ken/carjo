@@ -5,7 +5,7 @@ const cars = [
   { id: 1, brand: "Tesla", model: "Model 3", fuel: "Electric", year: 2022, price: 45000, img: "images/tesla-model3.jpg" },
   { id: 2, brand: "BMW", model: "X5", fuel: "Petrol", year: 2021, price: 60000, img: "images/bmw-x5.jpg" },
   { id: 3, brand: "Toyota", model: "Prius", fuel: "Hybrid", year: 2020, price: 30000, img: "images/toyota-prius.jpg" },
-  { id: 4, brand: "Honda", model: "Accord", fuel: "Petrol", year: 2019, price: 25000, img: "imageshonda-accord.jpg" },
+  { id: 4, brand: "Honda", model: "Accord", fuel: "Petrol", year: 2019, price: 25000, img: "images/honda-accord.jpg" },
   { id: 5, brand: "Tesla", model: "Model X", fuel: "Electric", year: 2023, price: 80000, img: "images/tesla-modelx.jpg" },
 ];
 
