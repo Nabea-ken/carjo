@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spare Part Details - Carjo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Carjo</h1>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="accessories.html">Accessories</a>
+      <a href="spare-parts.html">Spare Parts</a>
+      <a href="orders.html">Orders</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Login</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div id="userSection"></div>
+  </header>
+
+  <section class="product-detail" id="partDetailContainer">
+    <!-- JS will populate this -->
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Carjo. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const partId = params.get("id");
+      const part = getSparePartById(partId);
+      const container = document.getElementById("partDetailContainer");
+
+      if (!part) {
+        container.innerHTML = "<p>Spare part not found.</p>";
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="product-detail-card">
+          <img src="${part.img}" alt="${part.name}" />
+          <div class="product-info">
+            <h2>${part.name}</h2>
+            <p><strong>Category:</strong> ${part.category}</p>
+            <p><strong>Description:</strong> ${part.description}</p>
+            <p><strong>Price:</strong> $${part.price}</p>
+            <button onclick="addSpareToCart(${part.id})">Add to Cart</button>
+          </div>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
