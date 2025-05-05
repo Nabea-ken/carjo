@@ -73,10 +73,10 @@ function renderCars(carList = cars) {
 }
 
 // On load, render cars if applicable
-window.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('car-list')) {
-    renderCars();
-  }
+//window.addEventListener('DOMContentLoaded', () => {
+  //if (document.getElementById('car-list')) {
+    //renderCars();
+  //}
 });
 
 const spareParts = [
