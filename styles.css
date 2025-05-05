@@ -72,6 +72,23 @@ nav.show {
   padding: 2rem;
   text-align: center;
 }
+.top-link {
+  text-align: right;
+  background-color: #ff7b00; /* Orange theme */
+  padding: 5px 15px;
+}
+
+.top-link a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.top-link a:hover {
+  text-decoration: underline;
+}
+
 
 .filters {
   display: flex;
