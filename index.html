@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carjo - Home</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -16,7 +16,7 @@
     <nav id="navMenu">
       <a href="index.html">Home</a>                
       <a href="accessories.html">Accessories</a>
-      <a href="spare-parts.html">Spare Parts<a/>
+      <a href="spare-parts.html">Spare Parts</a>
       <a href="orders.html">My Rentals/Orders</a>
       <a href="cart.html">Cart</a>
       <a href="login.html">Login</a>
@@ -45,15 +45,14 @@
       <option value="Hybrid">Hybrid</option>
     </select>
 
-    <input type="number" id="yearFilter" placeholder="Min Year">
-    <input type="number" id="priceFilter" placeholder="Max Price">
-    <input type="text" id="searchInput" placeholder="Search by model">
-
+    <input type="number" id="yearFilter" placeholder="Min Year" />
+    <input type="number" id="priceFilter" placeholder="Max Price" />
+    <input type="text" id="searchInput" placeholder="Search by model" />
     <button onclick="applyFilters()">Apply Filters</button>
   </div>
 
- <main>
-      <section class="products-grid" id="car-list">
+  <main>
+    <section class="products-grid" id="car-list">
       <!-- Cars will be rendered here -->
     </section>
   </main>
@@ -63,49 +62,52 @@
   <footer>
     <p>&copy; 2025 Carjo. All rights reserved.</p>
   </footer>
-<script>
-  const cars = [
-  {
-    id: 1,
-    name: "Toyota Corolla",
-    price: 45,
-    image: "bmw-x5.jpg",
-    description: "Reliable and fuel-efficient sedan."
-  },
-  {
-    id: 2,
-    name: "Honda Accord",
-    price: 50,
-    image: "honda-accord.jpg",
-    description: "Sporty design with great handling."
-  },
-  {
-    id: 3,
-    name: "Tesla Model3",
-    price: 80,
-    image: "tesla-model3.jpg",
-    description: "Spacious SUV for families or groups."
-  },
-  {
-    id: 4,
-    name: "Tesla Modelx",
-    price: 80,
-    image: "tesla-modelx.jpg",
-    description: "Spacious SUV for families or groups."
-  },
- {
-    id: 5,
-    name: "Toyota Prius",
-    price: 80,
-    image: "toyota-prius.jpg",
-    description: "Spacious SUV for families or groups."
-  }
+
+  <script>
+    const cars = [
+      {
+        id: 1,
+        name: "Toyota Corolla",
+        price: 45,
+        image: "bmw-x5.jpg",
+        description: "Reliable and fuel-efficient sedan."
+      },
+      {
+        id: 2,
+        name: "Honda Accord",
+        price: 50,
+        image: "honda-accord.jpg",
+        description: "Sporty design with great handling."
+      },
+      {
+        id: 3,
+        name: "Tesla Model3",
+        price: 80,
+        image: "tesla-model3.jpg",
+        description: "Electric performance with high-tech features."
+      },
+      {
+        id: 4,
+        name: "Tesla Modelx",
+        price: 80,
+        image: "tesla-modelx.jpg",
+        description: "Spacious SUV for families or groups."
+      },
+      {
+        id: 5,
+        name: "Toyota Prius",
+        price: 80,
+        image: "toyota-prius.jpg",
+        description: "Efficient hybrid with advanced tech."
+      }
+    ];
+
     function renderCars(carList = cars) {
-      const container = document.getElementById('car-list');
-      container.innerHTML = '';
-      carList.forEach(car => {
-        const card = document.createElement('div');
-        card.className = 'car-card';
+      const container = document.getElementById("car-list");
+      container.innerHTML = "";
+      carList.forEach((car) => {
+        const card = document.createElement("div");
+        card.className = "car-card";
         card.innerHTML = `
           <img src="images/${car.image}" alt="${car.name}" />
           <h3>${car.name}</h3>
@@ -128,10 +130,22 @@
       document.getElementById("navMenu").classList.toggle("show");
     }
 
+    function applyFilters() {
+      const search = document.getElementById("searchInput").value.toLowerCase();
+      const priceMax = parseFloat(document.getElementById("priceFilter").value);
+      const filtered = cars.filter(car => {
+        return (
+          (!search || car.name.toLowerCase().includes(search)) &&
+          (!priceMax || car.price <= priceMax)
+        );
+      });
+      renderCars(filtered);
+    }
+
     window.addEventListener("load", () => {
       document.querySelector(".loader").style.display = "none";
       renderCars();
     });
-</script>
+  </script>
 </body>
 </html>
