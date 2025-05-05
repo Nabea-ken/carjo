@@ -4,53 +4,6 @@
   --bg-color: #fff;
   --light-bg: #f9f9f9;
 }
-.cart-page {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--light-bg);
-  padding: 1rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-.cart-details {
-  flex-grow: 1;
-}
-
-.remove-btn {
-  background: #e53935;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.remove-btn:hover {
-  background: #c62828;
-}
-
-#checkoutBtn {
-  background: var(--primary-color);
-  color: white;
-  padding: 0.7rem 1.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: block;
-  margin: 1rem auto;
-}
 
 body {
   margin: 0;
@@ -157,7 +110,7 @@ nav.show {
   padding: 2rem;
 }
 
-.car-card {
+.car-card, .product-card {
   background: white;
   border-radius: 6px;
   overflow: hidden;
@@ -166,18 +119,18 @@ nav.show {
   text-align: center;
 }
 
-.car-card img {
+.car-card img, .product-card img {
   max-width: 100%;
   height: 160px;
   object-fit: cover;
   border-radius: 4px;
 }
 
-.car-card h3 {
+.car-card h3, .product-card h3 {
   margin: 0.5rem 0;
 }
 
-.car-card button {
+.car-card button, .product-card button {
   background: var(--primary-color);
   color: white;
   border: none;
@@ -187,7 +140,7 @@ nav.show {
   cursor: pointer;
 }
 
-.car-card button:hover {
+.car-card button:hover, .product-card button:hover {
   background: #e65100;
 }
 
@@ -234,6 +187,54 @@ nav.show {
   border-radius: 5px;
   margin-top: 1rem;
   cursor: pointer;
+}
+
+.cart-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--light-bg);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.cart-details {
+  flex-grow: 1;
+}
+
+.remove-btn {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: #c62828;
+}
+
+#checkoutBtn {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 1rem auto;
 }
 
 footer {
