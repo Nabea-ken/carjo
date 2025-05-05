@@ -1,160 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Carjo - Spare Parts</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="scripts.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spare Parts - Carjo</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="loader">Loading...</div>
 
-<header>
-  <h1>Carjo</h1>
-  <button class="hamburger" onclick="toggleMenu()">☰</button>
-  <nav id="navMenu">
-    <a href="index.html">Home</a>                
-    <a href="accessories.html">Accessories</a>
-    <a href="spare-parts.html">Spare Parts</a> <!-- New Link -->
-    <a href="orders.html">My Rentals/Orders</a>
-    <a href="cart.html">Cart</a>
-    <a href="login.html">Login</a>
-    <a href="blog.html">Blog</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div id="userSection"></div>
-</header>
+  <header>
+    <h1>Carjo Spare Parts</h1>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="spare-parts.html">Spare Parts</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
 
-<section class="hero">
-  <h1>Find Spare Parts</h1>
-  <p>Order Genuine Spare Parts at Carjo.</p>
-</section>
+  <main>
+    <section class="form-container">
+      <h2>Find Spare Parts</h2>
+      <input type="text" id="searchInput" placeholder="Search spare parts..." />
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="Brakes">Brakes and brake pads</option>
+        <option value="Batteries">Batteries</option>
+        <option value="Tires">Tires and wheels</option>
+        <option value="Alternators">Alternators and starters</option>
+        <option value="Fuel">Fuel pumps and filters</option>
+        <option value="Cooling">Radiators and cooling systems</option>
+        <option value="Belts">Belts and hoses</option>
+        <option value="Ignition">Ignition coils and distributors</option>
+        <option value="Exhaust">Exhaust systems</option>
+        <option value="Shocks">Shock absorbers and struts</option>
+      </select>
+    </section>
 
-<div id="sparePartsList" class="products-grid">
-  <!-- Spare parts will be injected here dynamically -->
-</div>
+    <section class="products-grid" id="parts-list">
+      <!-- Parts rendered here -->
+    </section>
+  </main>
 
-<footer>
-  <p>&copy; 2025 Carjo. All rights reserved.</p>
-</footer>
-<script>
-  const spareParts = [
-  {
-    id: 1,
-    name: "Brake Pads",
-    price: 120,
-    img: "images/spare/brake-pads.jpg",
-    category: "Tires",
-    description: "High-quality brake pads for improved stopping power."
-  },
-  {
-    id: 2,
-    name: "Air Filter",
-    price: 50,
-    img: "images/spare/air-filter.jpg",
-    category: "Engine",
-    description: "OEM air filter for clean engine performance."
-  },
-  {
-    id: 3,
-    name: "Oil Filter",
-    price: 40,
-    img: "images/spare/oil-filter.jpg",
-    category: "Engine",
-    description: "Long-lasting oil filter for optimal lubrication."
-  },
-  {
-    id: 4,
-    name: "Car Battery",
-    price: 200,
-    img: "images/spare/car-battery.jpg",
-    category: "Electrical",
-    description: "Reliable battery with 2-year warranty."
-  },
-  {
-    id: 5,
-    name: "Wiper Blades",
-    price: 25,
-    img: "images/spare/wiper-blades.jpg",
-    category: "Accessories",
-    description: "Durable all-season wiper blades."
-  }
-];
+  <footer>
+    <p>&copy; 2025 Carjo. All rights reserved.</p>
+  </footer>
 
-let currentCategory = 'All';
+  <script>
+    const parts = [
+      { name: "Brakes and Brake Pads", category: "Brakes", price: 60, description: "High quality pads and discs.", image: "brakes.jpg" },
+      { name: "Car Battery", category: "Batteries", price: 90, description: "12V maintenance-free battery.", image: "battery.jpg" },
+      { name: "All-Terrain Tire", category: "Tires", price: 85, description: "Durable for all surfaces.", image: "tire.jpg" },
+      { name: "Starter Motor", category: "Alternators", price: 120, description: "Powerful and reliable start.", image: "starter.jpg" },
+      { name: "Fuel Filter", category: "Fuel", price: 25, description: "Clean and efficient fuel flow.", image: "fuel-filter.jpg" },
+      { name: "Radiator", category: "Cooling", price: 130, description: "Keeps engine cool.", image: "radiator.jpg" },
+      { name: "Serpentine Belt", category: "Belts", price: 20, description: "Drives multiple engine accessories.", image: "belt.jpg" },
+      { name: "Ignition Coil", category: "Ignition", price: 35, description: "Delivers spark to the engine.", image: "ignition-coil.jpg" },
+      { name: "Muffler", category: "Exhaust", price: 60, description: "Reduces exhaust noise.", image: "muffler.jpg" },
+      { name: "Shock Absorber", category: "Shocks", price: 75, description: "Smooths out your ride.", image: "shock.jpg" }
+    ];
 
-function renderSpareParts() {
-  const list = document.getElementById("sparePartsList");
-  if (!list) return;
+    function renderParts(filteredParts) {
+      const container = document.getElementById('parts-list');
+      container.innerHTML = '';
 
-  const searchText = document.getElementById("searchInput")?.value?.toLowerCase() || "";
+      filteredParts.forEach(part => {
+        const card = document.createElement('div');
+        card.className = 'car-card';
+        card.innerHTML = `
+          <img src="images/${part.image}" alt="${part.name}" />
+          <h3>${part.name}</h3>
+          <p>${part.description}</p>
+          <p><strong>$${part.price}</strong></p>
+          <button onclick="addToCart('${part.name}', ${part.price})">Add to Cart</button>
+        `;
+        container.appendChild(card);
+      });
+    }
 
-  const filtered = spareParts.filter(part =>
-    (currentCategory === "All" || part.category === currentCategory) &&
-    part.name.toLowerCase().includes(searchText)
-  );
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart.`);
+    }
 
-  list.innerHTML = "";
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
 
-  if (filtered.length === 0) {
-    list.innerHTML = "<p>No spare parts found.</p>";
-    return;
-  }
+    function filterParts() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const category = document.getElementById('categoryFilter').value;
 
-  filtered.forEach(part => {
-    const card = document.createElement("div");
-    card.className = "car-card";
-    card.innerHTML = `
-      <img src="${part.img}" alt="${part.name}">
-      <h3>${part.name}</h3>
-      <p>Category: ${part.category}</p>
-      <p>Price: $${part.price}</p>
-      <button onclick="location.href='part-details.html?id=${part.id}'">View Details</button>
-      <button onclick="addSpareToCart(${part.id})">Add to Cart</button>
-    `;
-    list.appendChild(card);
-  });
-}
+      const filtered = parts.filter(part => {
+        const matchesCategory = category === 'all' || part.category === category;
+        const matchesSearch = part.name.toLowerCase().includes(search);
+        return matchesCategory && matchesSearch;
+      });
 
-function filterByCategory(category) {
-  currentCategory = category;
-  renderSpareParts();
-}
+      renderParts(filtered);
+    }
 
-function filterSpareParts() {
-  renderSpareParts();
-}
-
-function getSparePartById(id) {
-  return spareParts.find(p => p.id === parseInt(id));
-}
-
-function addSpareToCart(id) {
-  alert(`Part ${id} added to cart! (Stub function)`);
-}
-
-function toggleMenu() {
-  document.getElementById("navMenu").classList.toggle("show");
-}
-
-function showUserInNav() {
-  const userSection = document.getElementById("userSection");
-  if (userSection) {
-    userSection.innerHTML = `<p>Welcome, User!</p>`;
-  }
-}
-
-function updateCartCount() {
-  // Stub for cart count
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  updateCartCount();
-  showUserInNav();
-  renderCars?.();
-  renderSpareParts?.();
-});
-
-</script>
+    window.addEventListener("load", () => {
+      document.querySelector(".loader").style.display = "none";
+      renderParts(parts);
+      document.getElementById("searchInput").addEventListener("input", filterParts);
+      document.getElementById("categoryFilter").addEventListener("change", filterParts);
+    });
+  </script>
 </body>
 </html>
