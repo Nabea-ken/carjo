@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Become a Seller - Carjo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="top-link">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <header>
+    <h1>Carjo</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h2>Become a Seller</h2>
+      <p>Join Carjo to list your vehicles or spare parts and reach thousands of buyers and renters.</p>
+      <form id="sellerForm">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required />
+
+        <label for="businessType">What will you sell?</label>
+        <select id="businessType" required>
+          <option value="">-- Select an option --</option>
+          <option value="cars">Cars</option>
+          <option value="spare-parts">Spare Parts</option>
+          <option value="both">Both</option>
+        </select>
+
+        <label for="message">Additional Information</label>
+        <textarea id="message" rows="4" placeholder="Tell us about your business..."></textarea>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Carjo. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('sellerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you! Your application has been submitted.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
