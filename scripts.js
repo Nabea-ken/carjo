@@ -1,3 +1,84 @@
+// Hamburger menu toggle
+function toggleMenu() {
+  const menu = document.getElementById('navMenu');
+  menu.classList.toggle('active');
+}
+
+// Universal add to cart
+function addToCart(name, price) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ name, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(`${name} added to cart!`);
+}
+
+// Sample car data
+const cars = [
+  {
+    id: 1,
+    name: "Toyota Corolla",
+    price: 45,
+    image: "images/bmw-x5.jpg",
+    description: "Reliable and fuel-efficient sedan."
+  },
+  {
+    id: 2,
+    name: "Honda Accord",
+    price: 50,
+    image: "images/honda-accord.jpg",
+    description: "Sporty design with great handling."
+  },
+  {
+    id: 3,
+    name: "Tesla Model3",
+    price: 80,
+    image: "images/tesla-model3.jpg",
+    description: "Spacious SUV for families or groups."
+  }
+  {
+    id: 4,
+    name: "Tesla Modelx",
+    price: 80,
+    image: "images/tesla-modelx.jpg",
+    description: "Spacious SUV for families or groups."
+  }
+ {
+    id: 5,
+    name: "Toyota Prius",
+    price: 80,
+    image: "images/toyota-prius.jpg",
+    description: "Spacious SUV for families or groups."
+  }
+];
+
+// Render car cards to #car-list
+function renderCars(carList = cars) {
+  const container = document.getElementById('car-list');
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  carList.forEach(car => {
+    const card = document.createElement('div');
+    card.className = 'car-card';
+    card.innerHTML = `
+      <img src="${car.image}" alt="${car.name}" />
+      <h3>${car.name}</h3>
+      <p>${car.description}</p>
+      <p><strong>$${car.price}/day</strong></p>
+      <button onclick="addToCart('${car.name}', ${car.price})">Add to Cart</button>
+    `;
+    container.appendChild(card);
+  });
+}
+
+// On load, render cars if applicable
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('car-list')) {
+    renderCars();
+  }
+});
+
 const spareParts = [
   {
     id: 1,
