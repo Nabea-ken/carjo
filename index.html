@@ -63,6 +63,75 @@
   <footer>
     <p>&copy; 2025 Carjo. All rights reserved.</p>
   </footer>
+<script>
+  const cars = [
+  {
+    id: 1,
+    name: "Toyota Corolla",
+    price: 45,
+    image: "images/bmw-x5.jpg",
+    description: "Reliable and fuel-efficient sedan."
+  },
+  {
+    id: 2,
+    name: "Honda Accord",
+    price: 50,
+    image: "images/honda-accord.jpg",
+    description: "Sporty design with great handling."
+  },
+  {
+    id: 3,
+    name: "Tesla Model3",
+    price: 80,
+    image: "images/tesla-model3.jpg",
+    description: "Spacious SUV for families or groups."
+  }
+  {
+    id: 4,
+    name: "Tesla Modelx",
+    price: 80,
+    image: "images/tesla-modelx.jpg",
+    description: "Spacious SUV for families or groups."
+  }
+ {
+    id: 5,
+    name: "Toyota Prius",
+    price: 80,
+    image: "images/toyota-prius.jpg",
+    description: "Spacious SUV for families or groups."
+  }
+    function renderCars(carList = cars) {
+      const container = document.getElementById('car-list');
+      container.innerHTML = '';
+      carList.forEach(car => {
+        const card = document.createElement('div');
+        card.className = 'car-card';
+        card.innerHTML = `
+          <img src="${car.image}" alt="${car.name}" />
+          <h3>${car.name}</h3>
+          <p>${car.description}</p>
+          <p><strong>$${car.price}/day</strong></p>
+          <button onclick="addToCart('${car.name}', ${car.price})">Add to Cart</button>
+        `;
+        container.appendChild(card);
+      });
+    }
 
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart.`);
+    }
+
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+
+    window.addEventListener("load", () => {
+      document.querySelector(".loader").style.display = "none";
+      renderCars();
+    });
+</script>
 </body>
 </html>
