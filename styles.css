@@ -32,6 +32,21 @@ nav {
   gap: 1rem;
   flex-wrap: wrap;
 }
+.silver-strip {
+  background-color: #C0C0C0; /* Silver */
+  padding: 8px 15px;
+  text-align: left;
+}
+
+.silver-strip a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.silver-strip a:hover {
+  text-decoration: underline;
+}
 
 nav a {
   color: white;
