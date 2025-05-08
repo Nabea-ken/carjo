@@ -26,6 +26,42 @@ header {
   height: 60px;
   vertical-align: middle;
 }
+.top-bar {
+  background-color: #C0C0C0; /* Silver */
+  color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.top-bar a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+}
+
+.top-left,
+.top-center,
+.top-right {
+  flex: 1;
+  min-width: 120px;
+}
+
+.top-center {
+  text-align: center;
+}
+
+.top-right {
+  text-align: right;
+}
 
 
 nav {
