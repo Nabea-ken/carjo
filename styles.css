@@ -26,33 +26,24 @@ header {
   height: 60px;
   vertical-align: middle;
 }
+
 .top-bar {
   background-color: #C0C0C0; /* Silver */
   color: #222;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 15px;
+  padding: 8px 20px;
   font-size: 0.9rem;
-  flex-wrap: wrap;
 }
 
-.top-bar a {
-  color: #000;
-  text-decoration: none;
-  font-weight: 500;
-  margin-right: 10px;
+.top-bar > div {
+  flex: 1 1 auto;
 }
 
-.top-bar a:hover {
-  text-decoration: underline;
-}
-
-.top-left,
-.top-center,
-.top-right {
-  flex: 1;
-  min-width: 120px;
+.top-left {
+  text-align: left;
 }
 
 .top-center {
@@ -63,6 +54,15 @@ header {
   text-align: right;
 }
 
+.top-bar a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+}
 
 nav {
   display: flex;
