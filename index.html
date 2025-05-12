@@ -5,56 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carjo - Home</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="scripts.js" defer></script>
 </head>
 <body>
-   
- <div class="top-bar">
-  <div class="top-left">
-    <a href="become-seller.html">Become a Seller</a>
-  </div>
-  <div class="top-center">
-    <span>Email: support@carjo.com | Phone: +123 456 7890</span>
-  </div>
-  <div class="top-right">
-    <a href="help.html">Help Center</a>
-  </div>
-</div>
 
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-left">
+      <a href="become-seller.html">Become a Seller</a>
+    </div>
+    <div class="top-center">
+      <span>Email: support@carjo.com | Phone: +123 456 7890</span>
+    </div>
+    <div class="top-right">
+      <a href="help.html">Help Center</a>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header>
-    
-    <h1>
-      <!-- Replace or add this where your logo should appear -->
-<div class="logo">
-  <img src="carjo-logo.png" alt="Carjo Logo" style="height: 60px;">
-</div>
-
-    </h1>
+    <div class="logo">
+      <img src="images/carjo-logo.png" alt="Carjo Logo" style="height: 50px;">
+    </div>
     <button class="hamburger" onclick="toggleMenu()">☰</button>
     <nav id="navMenu">
-      <a href="index.html">Home</a>                
+      <a href="index.html">Home</a>
       <a href="accessories.html">Accessories</a>
       <a href="spare-parts.html">Spare Parts</a>
-      <a href="orders.html">My Rentals/Orders</a>
+      <a href="orders.html">Orders</a>
       <a href="cart.html">Cart</a>
       <a href="login.html">Login</a>
       <a href="blog.html">Blog</a>
-      <a href="about.html">About Us</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div id="userSection"></div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <h1>Find Your Dream Car</h1>
     <p>Buy, Rent or Hire the best cars at Carjo.</p>
+    <a href="#car-list" class="cta-btn">Browse Cars</a>
   </section>
 
+  <!-- Filters -->
   <div class="filters">
     <select id="brandFilter">
       <option value="">All Brands</option>
     </select>
-
     <select id="fuelFilter">
       <option value="">All Fuel Types</option>
       <option value="Petrol">Petrol</option>
@@ -62,25 +59,25 @@
       <option value="Electric">Electric</option>
       <option value="Hybrid">Hybrid</option>
     </select>
-
     <input type="number" id="yearFilter" placeholder="Min Year" />
     <input type="number" id="priceFilter" placeholder="Max Price" />
     <input type="text" id="searchInput" placeholder="Search by model" />
     <button onclick="applyFilters()">Apply Filters</button>
   </div>
 
+  <!-- Car Listings -->
   <main>
     <section class="products-grid" id="car-list">
-      <!-- Cars will be rendered here -->
+      <!-- JavaScript will inject cars here -->
     </section>
   </main>
 
-  <div id="pagination"></div>
-
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Carjo. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
   <script>
     const cars = [
       {
@@ -99,12 +96,12 @@
       },
       {
         id: 3,
-        name: "Tesla Model3",
+        name: "Tesla Model 3",
         price: 80,
         image: "tesla-model3.jpg",
         description: "Electric performance with high-tech features."
       },
-      {
+       {
         id: 4,
         name: "Tesla Modelx",
         price: 80,
@@ -150,18 +147,17 @@
 
     function applyFilters() {
       const search = document.getElementById("searchInput").value.toLowerCase();
-      const priceMax = parseFloat(document.getElementById("priceFilter").value);
+      const maxPrice = parseFloat(document.getElementById("priceFilter").value);
       const filtered = cars.filter(car => {
         return (
           (!search || car.name.toLowerCase().includes(search)) &&
-          (!priceMax || car.price <= priceMax)
+          (!maxPrice || car.price <= maxPrice)
         );
       });
       renderCars(filtered);
     }
 
     window.addEventListener("load", () => {
-      document.querySelector(".loader").style.display = "none";
       renderCars();
     });
   </script>
