@@ -153,25 +153,39 @@ nav.show {
   }
 }
 
+.page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
 .hero {
-  background: #e6e6e6; /* Light silver/gray */
-  padding: 4rem 2rem;
+  background: white;
+  padding: 4rem 1rem;
   text-align: center;
-  color: #222;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #111;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #333;
-  max-width: 600px;
-  margin: 0 auto;
+  color: #444;
 }
+
+.filters {
+  margin-top: 2rem;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.products-grid {
+  margin-top: 2rem;
+}
+
 
 }
 .top-link {
