@@ -120,9 +120,25 @@ nav.show {
 }
 
 .hero {
-  background: white;
-  padding: 2rem;
+  background: #e6e6e6; /* Light silver/gray */
+  padding: 4rem 2rem;
   text-align: center;
+  color: #222;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 }
 .top-link {
   text-align: right;
