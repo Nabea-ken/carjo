@@ -27,6 +27,21 @@ header {
   margin: 0 auto;
 }
 
+.header-centered {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.logo-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem; /* increased from 1.5rem to add spacing */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -43,6 +58,23 @@ header {
   font-weight: 800;
   color: white;
   text-transform: uppercase;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
 }
 
 .top-bar {
@@ -135,6 +167,9 @@ nav.show {
 }
 
 .hamburger {
+  position: absolute;
+  right: 15px;
+  top: 1rem;
   display: none;
   background: none;
   border: none;
@@ -143,14 +178,13 @@ nav.show {
 }
 
 @media (max-width: 768px) {
-  nav {
+  .main-nav {
     display: none;
     flex-direction: column;
-    width: 100%;
     margin-top: 1rem;
   }
 
-  nav.show {
+  .main-nav.show {
     display: flex;
   }
 
@@ -158,9 +192,8 @@ nav.show {
     display: block;
   }
 
-  .header-inner {
+  .logo-nav {
     flex-direction: column;
-    align-items: flex-start;
   }
 }
 
