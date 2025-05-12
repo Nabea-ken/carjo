@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #f57c00; /* Orange */
-  --text-color: #333;
-  --bg-color: #fff;
-  --light-bg: #f9f9f9;
+  --primary-color: #C0C0C0; /* Silver */
+  --text-color: #222;
+  --bg-color: #f3f3f3;
+  --light-bg: #ffffff;
 }
 
 body {
@@ -25,20 +25,21 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo-img {
-  height: 50px;
+  height: 65px;
 }
 
 .logo-text {
-  font-size: 1.6rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 900;
   color: white;
+  text-transform: uppercase;
+  text-decoration: none;
   font-family: 'Segoe UI', sans-serif;
 }
-
 
 .top-bar {
   background-color: #C0C0C0; /* Silver */
@@ -76,6 +77,27 @@ header {
 .top-bar a:hover {
   text-decoration: underline;
 }
+
+.cta-btn,
+button,
+nav a,
+.product-card button,
+.car-card button,
+.product-info button,
+#checkoutBtn {
+  background-color: #666;
+  color: white;
+  border: none;
+}
+
+.cta-btn:hover,
+button:hover,
+nav a:hover,
+.product-card button:hover,
+.car-card button:hover {
+  background-color: #444;
+}
+
 
 nav {
   display: flex;
