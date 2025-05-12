@@ -87,6 +87,9 @@ header {
   padding: 8px 20px;
   font-size: 0.9rem;
 }
+.top-left, .top-center, .top-right {
+  flex: 1 1 auto;
+}
 
 .top-bar > div {
   flex: 1 1 auto;
