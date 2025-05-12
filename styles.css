@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #C0C0C0; /* Silver */
-  --text-color: #222;
-  --bg-color: #f3f3f3;
-  --light-bg: #ffffff;
+  --primary-color: #f57c00; /* Orange */
+  --text-color: #333;
+  --bg-color: #fff;
+  --light-bg: #f9f9f9;
 }
 
 body {
@@ -78,26 +78,25 @@ header {
   text-decoration: underline;
 }
 
-.cta-btn,
 button,
+.cta-btn,
 nav a,
 .product-card button,
 .car-card button,
 .product-info button,
 #checkoutBtn {
-  background-color: #666;
+  background-color: var(--primary-color);
   color: white;
   border: none;
 }
 
-.cta-btn:hover,
 button:hover,
+.cta-btn:hover,
 nav a:hover,
 .product-card button:hover,
 .car-card button:hover {
-  background-color: #444;
+  background-color: #e65100;
 }
-
 
 nav {
   display: flex;
