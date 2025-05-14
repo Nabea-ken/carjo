@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Help Center - Carjo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-left">
+      <a href="become-seller.html">Become a Seller</a>
+    </div>
+    <div class="top-center">
+      <span>Email: support@carjo.com | Phone: +123 456 7890</span>
+    </div>
+    <div class="top-right">
+      <a href="help.html">Help Center</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-centered">
+      <div class="logo-nav">
+        <a href="index.html" class="logo">
+          <img src="images/carjo-logo.png" alt="Carjo Logo" class="logo-img" />
+          <span class="logo-text">CARJO</span>
+        </a>
+        <nav class="main-nav" id="navMenu">
+          <a href="index.html">Home</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="spare-parts.html">Spare Parts</a>
+          <a href="orders.html">Orders</a>
+          <a href="cart.html">Cart</a>
+          <a href="login.html">Login</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="page-container">
+    <section class="form-container">
+      <h2>Help Center</h2>
+      <p>Welcome to the Carjo Help Center. Find answers to common questions or reach out for assistance.</p>
+
+      <h3>Frequently Asked Questions</h3>
+      <ul>
+        <li><strong>How do I rent a car?</strong><br>Visit the home page, browse listings, and click "Add to Cart" then proceed to checkout.</li>
+
+        <li><strong>How do I become a seller?</strong><br>Click the "Become a Seller" link at the top of the page and submit the registration form.</li>
+
+        <li><strong>Can I track my orders?</strong><br>Yes, go to the "Orders" page after logging in to view your rentals and purchases.</li>
+
+        <li><strong>What payment methods do you accept?</strong><br>Currently, we accept credit/debit cards and mobile payments.</li>
+      </ul>
+
+      <h3>Need More Help?</h3>
+      <p>
+        If you can’t find what you’re looking for, feel free to <a href="contact.html">contact our support team</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Carjo. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
