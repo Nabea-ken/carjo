@@ -93,7 +93,7 @@
 
       filteredParts.forEach(part => {
         const card = document.createElement('div');
-        card.className = 'car-card';
+        card.className = 'product-card';
         card.innerHTML = `
           <img src="images/${part.image}" alt="${part.name}" />
           <h3>${part.name}</h3>
@@ -130,7 +130,6 @@
     }
 
     window.addEventListener("load", () => {
-      document.querySelector(".loader").style.display = "none";
       renderParts(parts);
       document.getElementById("searchInput").addEventListener("input", filterParts);
       document.getElementById("categoryFilter").addEventListener("change", filterParts);
