@@ -218,12 +218,14 @@ nav.show {
   background: none;
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
   position: absolute;
   top: 1rem;
   right: 1rem;
   cursor: pointer;
 }
+
 
 
 @media (max-width: 768px) {
