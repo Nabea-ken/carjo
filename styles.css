@@ -559,4 +559,36 @@ footer {
   color: var(--primary-color);
 }
 
+.blog-list {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.blog-post {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.blog-post p {
+  line-height: 1.6;
+}
+
+.blog-post a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blog-post a:hover {
+  text-decoration: underline;
+}
+
 
