@@ -486,6 +486,17 @@ footer {
   border: 1px solid #ccc;
 }
 
+.form-container ul {
+  text-align: left;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.form-container ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
