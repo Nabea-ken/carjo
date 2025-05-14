@@ -5,26 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accessories - Carjo</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="scripts.js" defer></script>
 </head>
 <body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-left">
+      <a href="become-seller.html">Become a Seller</a>
+    </div>
+    <div class="top-center">
+      <span>Email: support@carjo.com | Phone: +123 456 7890</span>
+    </div>
+    <div class="top-right">
+      <a href="help.html">Help Center</a>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header>
-    <h1>Carjo</h1>
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
-    <nav id="navMenu">
-      <a href="index.html">Home</a>
-      <a href="accessories.html">Accessories</a>
-      <a href="spare-parts.html">Spare Parts</a>
-      <a href="orders.html">Orders</a>
-      <a href="cart.html">Cart</a>
-      <a href="login.html">Login</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="header-centered">
+      <div class="logo-nav">
+        <a href="index.html" class="logo">
+          <img src="images/carjo-logo.png" alt="Carjo Logo" class="logo-img" />
+          <span class="logo-text">CARJO</span>
+        </a>
+        <nav class="main-nav" id="navMenu">
+          <a href="index.html">Home</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="spare-parts.html">Spare Parts</a>
+          <a href="orders.html">Orders</a>
+          <a href="cart.html">Cart</a>
+          <a href="login.html">Login</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
   </header>
 
-  <main>
+  <!-- Main Content -->
+  <main class="page-container">
     <section class="hero">
       <h2>Car Accessories</h2>
       <p>Enhance your drive with top-quality accessories</p>
@@ -50,6 +72,7 @@
     <p>&copy; 2025 Carjo. All rights reserved.</p>
   </footer>
 
+  <!-- Script -->
   <script>
     const accessories = [
       { name: "Seat Cover", price: 25, image: "images/seat-cover.jpg", category: "Interior" },
@@ -96,6 +119,10 @@
       cart.push({ name, price });
       localStorage.setItem("cart", JSON.stringify(cart));
       alert("Added to cart!");
+    }
+
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
     }
 
     window.addEventListener("DOMContentLoaded", displayAccessories);
