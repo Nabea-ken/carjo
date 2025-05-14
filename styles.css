@@ -486,6 +486,16 @@ footer {
   border: 1px solid #ccc;
 }
 
+.form-container textarea {
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
 .form-container ul {
   text-align: left;
   margin: 1rem 0;
