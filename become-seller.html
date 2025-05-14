@@ -7,44 +7,61 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="top-link">
-    <a href="index.html">← Back to Home</a>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-left">
+      <a href="become-seller.html">Become a Seller</a>
+    </div>
+    <div class="top-center">
+      <span>Email: support@carjo.com | Phone: +123 456 7890</span>
+    </div>
+    <div class="top-right">
+      <a href="help.html">Help Center</a>
+    </div>
   </div>
 
+  <!-- Header -->
   <header>
-    <h1>Carjo</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="cart.html">Cart</a>
-      <a href="login.html">Login</a>
-    </nav>
+    <div class="header-centered">
+      <div class="logo-nav">
+        <a href="index.html" class="logo">
+          <img src="images/carjo-logo.png" alt="Carjo Logo" class="logo-img" />
+          <span class="logo-text">CARJO</span>
+        </a>
+        <nav class="main-nav" id="navMenu">
+          <a href="index.html">Home</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="spare-parts.html">Spare Parts</a>
+          <a href="orders.html">Orders</a>
+          <a href="cart.html">Cart</a>
+          <a href="login.html">Login</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
   </header>
 
-  <main>
+  <!-- Main Content -->
+  <main class="page-container">
     <section class="form-container">
       <h2>Become a Seller</h2>
-      <p>Join Carjo to list your vehicles or spare parts and reach thousands of buyers and renters.</p>
+      <p>Join our network and grow your automotive business by listing your cars, accessories, or spare parts on Carjo.</p>
+
       <form id="sellerForm">
-        <label for="fullName">Full Name</label>
-        <input type="text" id="fullName" required />
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" required />
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" required />
-
-        <label for="businessType">What will you sell?</label>
-        <select id="businessType" required>
-          <option value="">-- Select an option --</option>
-          <option value="cars">Cars</option>
-          <option value="spare-parts">Spare Parts</option>
-          <option value="both">Both</option>
+        <input type="text" name="name" placeholder="Your Full Name" required />
+        <input type="email" name="email" placeholder="Your Email Address" required />
+        <input type="text" name="business" placeholder="Business Name or Type" required />
+        <select name="productType" required>
+          <option value="">Select Product Category</option>
+          <option value="Cars">Cars</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Spare Parts">Spare Parts</option>
         </select>
-
-        <label for="message">Additional Information</label>
-        <textarea id="message" rows="4" placeholder="Tell us about your business..."></textarea>
-
+        <textarea name="message" placeholder="Tell us about your business..." rows="5" required></textarea>
         <button type="submit">Submit Application</button>
       </form>
     </section>
@@ -54,10 +71,15 @@
     <p>&copy; 2025 Carjo. All rights reserved.</p>
   </footer>
 
+  <!-- Script -->
   <script>
-    document.getElementById('sellerForm').addEventListener('submit', function(e) {
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+
+    document.getElementById("sellerForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      alert('Thank you! Your application has been submitted.');
+      alert("Your application has been submitted! We will contact you shortly.");
       this.reset();
     });
   </script>
