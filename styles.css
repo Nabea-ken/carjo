@@ -555,6 +555,21 @@ footer {
   line-height: 1.6;
 }
 
+.form-note {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.form-note a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-note a:hover {
+  text-decoration: underline;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
