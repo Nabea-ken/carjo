@@ -494,18 +494,21 @@ footer {
 }
 
 .form-container input {
+  width: 100%;
   padding: 0.7rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  box-sizing: border-box;
 }
 
 .form-container button {
   background: var(--primary-color);
   color: white;
-  padding: 0.7rem;
+  padding: 0.8rem;
   border: none;
+  width: 100%;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
