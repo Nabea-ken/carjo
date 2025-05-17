@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register – Carjo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-left">
+      <a href="become-seller.html">Become a Seller</a>
+    </div>
+    <div class="top-center">
+      <span>Email: support@carjo.com | Phone: +123 456 7890</span>
+    </div>
+    <div class="top-right">
+      <a href="help.html">Help Center</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-centered">
+      <div class="logo-nav">
+        <a href="index.html" class="logo">
+          <img src="images/carjo-logo.png" alt="Carjo logo" class="logo-img" />
+          <span class="logo-text">CARJO</span>
+        </a>
+
+        <nav class="main-nav" id="navMenu">
+          <a href="index.html">Home</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="spare-parts.html">Spare Parts</a>
+          <a href="orders.html">Orders</a>
+          <a href="cart.html">Cart</a>
+          <a href="login.html">Login</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <!-- mobile MENU button -->
+      <button class="hamburger" onclick="toggleMenu()">MENU</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="page-container">
+    <section class="form-container">
+      <h2>Create Your Account</h2>
+
+      <form id="registerForm">
+        <input type="text"    name="name"     placeholder="Full Name" required />
+        <input type="email"   name="email"    placeholder="Email Address" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <input type="password" name="confirm"  placeholder="Confirm Password" required />
+
+        <button type="submit">Register</button>
+
+        <p class="form-note">
+          Already have an account?
+          <a href="login.html">Log in here</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Carjo. All rights reserved.</p>
+  </footer>
+
+  <!-- tiny script -->
+  <script>
+    // hamburger toggle for mobile nav
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+
+    // fake register handler
+    document.getElementById('registerForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Registration successful! You can now log in.');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
