@@ -213,18 +213,26 @@ nav.show {
     display: flex;
 }
 
+/* ---------- HAMBURGER ------------- */
 .hamburger {
-  display: none;
-  position: fixed;           /* Fix it to the screen */
+  position: fixed;       /* pin to viewport */
   top: 1rem;
-  right: 1rem;               /* Always on the far right */
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
+  right: 1rem;           /* always far right */
   z-index: 1000;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 4px;
   cursor: pointer;
+  display: none;         /* default hidden on desktop */
+}
+
+/* show only on small screens */
+@media (max-width: 768px) {
+  .hamburger { display: block; }
 }
 
 @media (max-width: 768px) {
