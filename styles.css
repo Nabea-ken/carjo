@@ -215,18 +215,17 @@ nav.show {
 
 .hamburger {
   display: none;
+  position: fixed;           /* Fix it to the screen */
+  top: 1rem;
+  right: 1rem;               /* Always on the far right */
   background: none;
   border: none;
   color: white;
   font-size: 1rem;
   font-weight: bold;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  z-index: 1000;
   cursor: pointer;
 }
-
-
 
 @media (max-width: 768px) {
   .main-nav {
