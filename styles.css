@@ -83,27 +83,36 @@ header {
   align-items: center;
   padding: 10px 20px;
   font-size: 0.9rem;
-  background-color: #c0c0c0; /* Silver theme */
-}
-
-.top-bar div {
-  flex: 1 1 100%;
-  margin-bottom: 5px;
+  background-color: #c0c0c0; /* Silver */
   text-align: center;
 }
 
-.top-left { text-align: left; }
-.top-center { text-align: center; }
-.top-right { text-align: right; }
-
-.top-bar a {
-  color: #000;
-  text-decoration: none;
-  font-weight: 500;
+.top-left, .top-center, .top-right {
+  flex: 1 1 100%; /* Stack on small screens */
+  margin-bottom: 5px;
 }
 
-.top-bar a:hover {
-  text-decoration: underline;
+@media (min-width: 768px) {
+  .top-bar {
+    flex-wrap: nowrap;
+  }
+
+  .top-left, .top-center, .top-right {
+    flex: 1 1 auto;     /* Side by side on wide screens */
+    margin-bottom: 0;
+  }
+
+  .top-left {
+    text-align: left;
+  }
+
+  .top-center {
+    text-align: center;
+  }
+
+  .top-right {
+    text-align: right;
+  }
 }
 
 /* Page Container */
