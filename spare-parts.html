@@ -15,6 +15,8 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>Spare Parts - Carjo</title>
   <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" as="image" href="images/spare/brakes.jpg" type="image/jpg">
+
 </head>
 <body>
  
@@ -131,7 +133,7 @@
         const card = document.createElement('div');
         card.className = 'product-card';
         card.innerHTML = `
-          <img src="${part.image}" alt="${part.name}" />
+          <img src="${part.image}" alt="${part.name}" width:"300" height:"200" />
           <h3>${part.name}</h3>
           <p>${part.description}</p>
           <p><strong>$${part.price}</strong></p>
