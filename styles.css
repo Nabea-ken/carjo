@@ -18,6 +18,12 @@ img {
   display: block;
 }
 
+@font-face {
+  font-family: 'MyFont';
+  src: url('myfont.woff2') format('woff2');
+  font-display: swap;
+}
+
 /* Header & Logo/Nav */
 header {
   background: var(--primary-color);
