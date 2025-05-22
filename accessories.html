@@ -16,6 +16,8 @@
   <title>Accessories - Carjo</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preload" as="image" href="images/accessories/seat-cover.avif" type="image/avif">
+
 </head>
 <body>
 
@@ -132,7 +134,7 @@
       grid.innerHTML = filtered.length
         ? filtered.map(acc => `
           <div class="product-card">
-            <img src="${acc.image}" alt="${acc.name}" />
+            <img src="${acc.image}" alt="${acc.name}" width:"300" height:"200" />
             <h3>${acc.name}</h3>
             <p>$${acc.price}</p>
             <button onclick="addToCart('${acc.name}', ${acc.price})">Add to Cart</button>
