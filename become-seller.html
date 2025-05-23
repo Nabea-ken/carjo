@@ -59,7 +59,7 @@
   </header>
 
   <!-- Main Content -->
-  <main class="page-container">
+ <main class="page-container" role="main">
   <section class="form-container">
     <h2>Become a Seller on Carjo</h2>
     <p>Join Carjo’s trusted network of car dealers, mechanics, and auto parts vendors. Reach thousands of customers looking for cars, accessories, and genuine spare parts.</p>
@@ -80,13 +80,13 @@
     </ol>
 
     <h3>Register as a Seller</h3>
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Business Email" required />
-      <input type="text" placeholder="Business Name" />
-      <input type="tel" placeholder="Phone Number" />
-      <textarea placeholder="Tell us about your business..." rows="4"></textarea>
-      <button type="submit">Submit Application</button>
+    <form id="sellerform">
+      <input type="text" placeholder="Full Name" aria-label="Full Name" required />
+<input type="email" placeholder="Business Email" aria-label="Business Email" required />
+<input type="text" placeholder="Business Name" aria-label="Business Name" />
+<input type="tel" placeholder="Phone Number" aria-label="Phone Number" />
+<textarea placeholder="Tell us about your business..." aria-label="Business Description" rows="4"></textarea>
+     <button type="submit" aria-label="Submit your seller application">Submit Application</button>
     </form>
 
     <p class="form-note">Our team will review your application and get in touch within 24–48 hours.</p>
