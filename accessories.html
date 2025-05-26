@@ -139,8 +139,8 @@ function displayAccessories() {
         return `
           <div class="product-card">
             <picture>
-              <source srcset="${basePath}.avif" type="image/avif">
-              <source srcset="${basePath}.webp" type="image/webp">
+                <source srcset="${car.image.replace(/\.(jpg|jpeg|png|webp|avif)/, '.avif')}" type="image/avif">
+                <source srcset="${car.image.replace(/\.(jpg|jpeg|png|webp|avif)/, '.webp')}" type="image/webp">
               <img src="${acc.image}" alt="${acc.name}" width="300" height="200" />
             </picture>
             <h3>${acc.name}</h3>
