@@ -127,27 +127,29 @@
       { name: "Shock Absorber", category: "Shocks", price: 75, description: "Smooths out your ride.", image: "images/spare/shock.jpg" }
     ];
 
-    function renderParts(filteredParts) {
-      const container = document.getElementById('parts-list');
-      container.innerHTML = '';
+function renderParts(filteredParts) {
+  const container = document.getElementById('parts-list');
+  container.innerHTML = '';
 
-      filteredParts.forEach(part => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-            <picture>
-              <source srcset="images/cars/${car.image.replace('.jpg', '.avif')}" type="image/avif">
-              <source srcset="images/cars/${car.image.replace('.jpg', '.webp')}" type="image/webp">
-              <img src="images/cars/${car.image}" alt="${car.name}" width="300" height="200" />
-            </picture>
-          <h3>${part.name}</h3>
-          <p>${part.description}</p>
-          <p><strong>$${part.price}</strong></p>
-          <button onclick="addToCart('${part.name}', ${part.price})">Add to Cart</button>
-        `;
-        container.appendChild(card);
-      });
-    }
+  filteredParts.forEach(part => {
+    const imageBase = part.image.replace(/\.(jpg|jpeg|png|webp|avif)$/, '');
+    card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML = `
+      <picture>
+        <source srcset="${imageBase}.avif" type="image/avif">
+        <source srcset="${imageBase}.webp" type="image/webp">
+        <img src="${part.image}" alt="${part.name}" width="300" height="200" />
+      </picture>
+      <h3>${part.name}</h3>
+      <p>${part.description}</p>
+      <p><strong>$${part.price}</strong></p>
+      <button onclick="addToCart('${part.name}', ${part.price})">Add to Cart</button>
+    `;
+    container.appendChild(card);
+  });
+}
+
 
     function addToCart(name, price) {
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
