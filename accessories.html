@@ -124,30 +124,34 @@
 
     let activeCategory = "All";
 
-    function displayAccessories() {
-      const grid = document.getElementById("accessoriesGrid");
-      const search = document.getElementById("searchInput").value.toLowerCase();
+function displayAccessories() {
+  const grid = document.getElementById("accessoriesGrid");
+  const search = document.getElementById("searchInput").value.toLowerCase();
 
-      const filtered = accessories.filter(acc =>
-        (activeCategory === "All" || acc.category === activeCategory) &&
-        acc.name.toLowerCase().includes(search)
-      );
+  const filtered = accessories.filter(acc =>
+    (activeCategory === "All" || acc.category === activeCategory) &&
+    acc.name.toLowerCase().includes(search)
+  );
 
-      grid.innerHTML = filtered.length
-        ? filtered.map(acc => `
+  grid.innerHTML = filtered.length
+    ? filtered.map(acc => {
+        const basePath = acc.image.replace(/\.(avif|webp|jpg|jpeg|png)$/, '');
+        return `
           <div class="product-card">
-              <picture>
-               <source srcset="images/cars/${car.image.replace('.jpg', '.avif')}" type="image/avif">
-               <source srcset="images/cars/${car.image.replace('.jpg', '.webp')}" type="image/webp">
-               <img src="images/cars/${car.image}" alt="${car.name}" width="300" height="200" />
-              </picture>
+            <picture>
+              <source srcset="${basePath}.avif" type="image/avif">
+              <source srcset="${basePath}.webp" type="image/webp">
+              <img src="${acc.image}" alt="${acc.name}" width="300" height="200" />
+            </picture>
             <h3>${acc.name}</h3>
             <p>$${acc.price}</p>
             <button onclick="addToCart('${acc.name}', ${acc.price})">Add to Cart</button>
           </div>
-        `).join('')
-        : "<p>No accessories found.</p>";
-    }
+        `;
+      }).join('')
+    : "<p>No accessories found.</p>";
+}
+
 
     function filterAccessories() {
       displayAccessories();
