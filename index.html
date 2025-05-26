@@ -168,11 +168,11 @@
         const card = document.createElement("div");
         card.className = "car-card";
         card.innerHTML = `
-          <picture>
-               <source srcset="images/cars/${car.image.replace('.jpg', '.avif')}" type="image/avif">
-               <source srcset="images/cars/${car.image.replace('.jpg', '.webp')}" type="image/webp">
-              <img src="images/cars/${car.image}" alt="${car.name}" width="300" height="200" />
-          </picture>
+    <picture>
+       <source srcset="${car.image.replace(/\.(jpg|jpeg|png|webp|avif)/, '.avif')}" type="image/avif">
+       <source srcset="${car.image.replace(/\.(jpg|jpeg|png|webp|avif)/, '.webp')}" type="image/webp">
+       <img src="${car.image}" alt="${car.name}" width="300" height="200" />
+    </picture>
           <h3>${car.name}</h3>
           <p>${car.description}</p>
           <p><strong>$${car.price}/day</strong></p>
