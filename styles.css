@@ -624,6 +624,19 @@ button:hover {
   color: var(--primary-color);
 }
 
+.about-content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.about-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.about-section {
+  margin-bottom: 2rem;
+}
+
 /* Responsive Nav Stack on Mobile */
 @media (max-width: 768px) {
   .logo-nav {
