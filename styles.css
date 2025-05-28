@@ -355,6 +355,18 @@ button:hover {
   }
 }
 
+@media (max-width: 480px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .remove-btn {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+  }
+}
+
 .cart-item {
   display: flex;
   justify-content: space-between;
