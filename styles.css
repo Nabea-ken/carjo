@@ -502,6 +502,12 @@ button:hover {
   line-height: 1.6;
 }
 
+@media (max-width: 480px) {
+  .form-container input {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 600px) {
   .form-container input,
   .form-container select {
@@ -534,13 +540,24 @@ button:hover {
 }
 
 .blog-post a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1rem;
 }
 
 .blog-post a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .blog-post {
+    padding: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
 }
 
 /* Orders */
