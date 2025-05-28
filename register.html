@@ -188,6 +188,13 @@
 
   <!-- tiny script -->
   <script>
+      
+    function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cartCount").textContent = cart.length;
+  }
+  window.addEventListener("DOMContentLoaded", updateCartCount);
+      
     // hamburger toggle for mobile nav
     function toggleMenu() {
       document.getElementById('navMenu').classList.toggle('show');
