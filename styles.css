@@ -445,6 +445,11 @@ button:hover {
 }
 
 .form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.form-container {
   max-width: 400px;
   margin: 2rem auto;
   padding: 2rem;
@@ -518,6 +523,13 @@ button:hover {
 .form-container ul li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .form-container ul,
+  .form-container ol {
+    padding-left: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
