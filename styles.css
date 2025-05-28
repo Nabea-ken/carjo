@@ -502,6 +502,14 @@ button:hover {
   line-height: 1.6;
 }
 
+@media (max-width: 600px) {
+  .form-container input,
+  .form-container select {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+}
+
 /* Blog */
 .blog-list {
   display: grid;
