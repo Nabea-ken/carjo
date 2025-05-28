@@ -475,7 +475,10 @@ button:hover {
   background: #e65100;
 }
 
-.form-note,
+.form-note {
+  margin-top: 1rem;
+}
+
 .form-container p {
   margin-top: 1rem;
   font-size: 0.95rem;
@@ -503,6 +506,9 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+  .form-container {
+    padding: 1rem;
+  }
   .form-container input {
     font-size: 1rem;
   }
