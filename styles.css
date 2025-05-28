@@ -398,6 +398,17 @@ button:hover {
 }
 
 /* Forms (Login, Register, Contact) */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-container input,
+  .form-container button {
+    font-size: 1rem;
+  }
+}
+
 .form-container {
   max-width: 400px;
   margin: 2rem auto;
@@ -413,7 +424,11 @@ button:hover {
   margin-bottom: 1.5rem;
 }
 
-.form-container input,
+.form-container input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+}
 .form-container select,
 .form-container textarea {
   padding: 0.7rem;
