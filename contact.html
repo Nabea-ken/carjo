@@ -64,16 +64,17 @@
       <p>If you have any questions, feedback, or support requests, feel free to reach out using the form below.</p>
 
 <form id="contactForm">
-  <label for="name">Your Name</label>
-  <input type="text" id="name" name="name" required />
+  <label for="name" class="sr-only">Your Name</label>
+  <input id="name" type="text" name="name" required />
+
 
   <label for="email">Your Email</label>
   <input type="email" id="email" name="email" required />
 
   <label for="message">Your Message</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+  <textarea name="message" placeholder="Your Message" rows="5" aria-label="Your Message" required></textarea>
 
-  <button type="submit">Send Message</button>
+  <button type="submit" aria-label="Send your message to Carjo">Send Message</button>
 </form>
 
 
