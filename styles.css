@@ -64,6 +64,11 @@ header {
   color: white;
 }
 
+:focus {
+  outline: 2px solid #ff6600;
+  outline-offset: 2px;
+}
+
 .main-nav {
   display: flex;
   gap: 1rem;
