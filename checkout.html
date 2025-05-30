@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - Carjo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Secure M-Pesa checkout with Carjo for cars, accessories and parts." />
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-left"><a href="index.html">Back to Home</a></div>
+    <div class="top-center"><span>Email: support@carjo.com | Phone: +123 456 7890</span></div>
+    <div class="top-right"><a href="help.html">Help Center</a></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-centered">
+      <div class="logo-nav">
+        <a href="index.html" class="logo">
+          <img src="carjo-logo.png" alt="Carjo Logo" class="logo-img" />
+          <span class="logo-text">CARJO</span>
+        </a>
+        <nav class="main-nav" id="navMenu">
+          <a href="index.html">Home</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="spare-parts.html">Spare Parts</a>
+          <a href="orders.html">Orders</a>
+          <a href="cart.html">Cart</a>
+          <a href="login.html">Login</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="page-container">
+    <section class="form-container">
+      <h2>Checkout</h2>
+
+      <div id="cartSummary"></div>
+
+      <h3>M-Pesa Payment Instructions</h3>
+      <ul>
+        <li><strong>Paybill Number:</strong> 123456</li>
+        <li><strong>Account Number:</strong> CARJO</li>
+        <li><strong>Amount:</strong> Based on your cart total</li>
+      </ul>
+      <p>After payment, please fill in the form below to confirm your transaction:</p>
+
+      <h3>Confirm Your Payment</h3>
+      <form id="paymentConfirmationForm">
+        <input type="text" name="name" placeholder="Your Full Name" required />
+        <input type="tel" name="phone" placeholder="M-Pesa Number" required />
+        <input type="text" name="transactionCode" placeholder="M-Pesa Code (e.g. QJ123ABC)" required />
+        <textarea name="notes" placeholder="Additional Notes (optional)" rows="3"></textarea>
+        <button type="submit">Confirm Payment</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="page-container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <h3>CARJO</h3>
+          <p>Your trusted hub for cars, parts, and accessories.</p>
+        </div>
+        <div class="footer-middle">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="spare-parts.html">Spare Parts</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <h4>Contact</h4>
+          <p>Email: support@carjo.com</p>
+          <p>Phone: +123 456 7890</p>
+          <p><a href="help.html">Help Center</a></p>
+        </div>
+      </div>
+      <p class="footer-bottom">&copy; 2025 Carjo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Display cart total
+    const cartSummaryDiv = document.getElementById('cartSummary');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+      cartSummaryDiv.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      cartSummaryDiv.innerHTML = `
+        <h3>Your Order</h3>
+        <ul>
+          ${cart.map(item => `<li>${item.name} - KES ${item.price}</li>`).join('')}
+        </ul>
+        <p><strong>Total: KES ${total}</strong></p>
+      `;
+    }
+
+    // Handle form submission
+    document.getElementById("paymentConfirmationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you! Your payment has been submitted and is under review.");
+      localStorage.removeItem("cart");
+      window.location.href = "thank-you.html";
+    });
+  </script>
+
+</body>
+</html>
