@@ -38,12 +38,11 @@
     <div id="userSection"></div>
   </header>
   
-  <nav class="breadcrumb" id="breadcrumbNav">
+<nav class="breadcrumb text-sm px-4 py-2 whitespace-nowrap overflow-x-auto flex flex-wrap gap-2 text-gray-700">
   <a href="index.html">Home</a> &gt;
   <a href="spare-parts.html">Spare Parts</a> &gt;
   <span id="breadcrumbCurrent">Loading...</span>
-  </nav>
-
+</nav>
 
   <section class="product-detail" id="partDetailContainer">
     <!-- JS will populate this -->
@@ -95,10 +94,11 @@
 
     function getSparePartById(id) {
     return parts.find(p => p.id === parseInt(id));
+        }
       
     document.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
-      const partId = params.get("id");
+      const partId = parseInt(params.get('id'));
       const part = getSparePartById(partId);
       const container = document.getElementById("partDetailContainer");
 
