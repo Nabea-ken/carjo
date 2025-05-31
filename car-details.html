@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta SEO -->
-<meta name="description" content="Carjo is your trusted platform for car rentals, accessories, and spare parts. Easy search, affordable prices, and secure checkout.">
-<meta name="keywords" content="Car rentals, auto accessories, car parts, car sales, spare parts, Kenya cars, Carjo">
-<meta name="author" content="Carjo Team">
-<meta property="og:title" content="Carjo - Rent, Buy, Accessorize" />
-<meta property="og:description" content="Find your dream car or genuine spare parts on Carjo. Reliable. Affordable. Fast." />
-<meta property="og:image" content="carjo-logo.png" />
-<meta property="og:url" content="https://yourdomain.com" /> 
-<meta name="twitter:card" content="summary_large_image" />
+  <!-- Meta SEO -->
+  <meta name="description" content="Carjo is your trusted platform for car rentals, accessories, and spare parts. Easy search, affordable prices, and secure checkout.">
+  <meta name="keywords" content="Car rentals, auto accessories, car parts, car sales, spare parts, Kenya cars, Carjo">
+  <meta name="author" content="Carjo Team">
+  <meta property="og:title" content="Carjo - Rent, Buy, Accessorize" />
+  <meta property="og:description" content="Find your dream car or genuine spare parts on Carjo. Reliable. Affordable. Fast." />
+  <meta property="og:image" content="carjo-logo.png" />
+  <meta property="og:url" content="https://yourdomain.com" /> 
+  <meta name="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Car details - Carjo</title>
+  <title>Car Details - Carjo</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -29,13 +28,73 @@
 </header>
 
 <div id="carDetails">
-  <img id="carImage" src="" alt="Car Image" loading="lazy" >
+  <img id="carImage" src="" alt="Car Image" loading="lazy">
   <h2 id="carName">Loading...</h2>
   <p id="carBrand"></p>
   <p id="carPrice"></p>
   <p id="carFuel"></p>
+  <a id="whatsappLink" href="#" target="_blank" class="whatsapp-chat-btn">Chat with Seller</a>
   <button id="addToCartButton">Add to Cart</button>
 </div>
+
+<script>
+  const cars = [
+      {
+        id: 1,
+        name: "Toyota Corolla",
+        price: 45,
+        image: "images/cars/bmw-x5.avif",
+        description: "Reliable and fuel-efficient sedan.",
+        sellerPhone: "+254701112233"
+      },
+      {
+        id: 2,
+        name: "Honda Accord",
+        price: 50,
+        image: "images/cars/honda-accord.avif",
+        description: "Sporty design with great handling.",
+        sellerPhone: "+254701112234"
+      },
+      {
+        id: 3,
+        name: "Tesla Model 3",
+        price: 80,
+        image: "images/cars/tesla-model3.avif",
+        description: "Electric performance with high-tech features.",
+        sellerPhone: "+254701112235"
+      },
+       {
+        id: 4,
+        name: "Tesla Modelx",
+        price: 80,
+        image: "images/cars/tesla-modelx.avif",
+        description: "Spacious SUV for families or groups.",
+        sellerPhone: "+254701112236"
+      },
+      {
+        id: 5,
+        name: "Toyota Prius",
+        price: 80,
+        image: "images/cars/toyota-prius.avif",
+        description: "Efficient hybrid with advanced tech.",
+        sellerPhone: "+254701112237"
+      }
+    ];
+    
+  const id = parseInt(new URLSearchParams(window.location.search).get('id'));
+  const car = cars.find(c => c.id === id);
+
+  if (!car) {
+    document.getElementById("carDetails").innerHTML = "<p>Car not found.</p>";
+  } else {
+    document.getElementById("carImage").src = car.image;
+    document.getElementById("carName").textContent = car.name;
+    document.getElementById("carBrand").textContent = `Brand: ${car.brand}`;
+    document.getElementById("carPrice").textContent = `Price: $${car.price}/day`;
+    document.getElementById("carFuel").textContent = `Fuel: ${car.fuel}`;
+    document.getElementById("whatsappLink").href = `https://wa.me/${car.sellerPhone}?text=Hi, I'm interested in your ${car.name} on Carjo.`;
+  }
+</script>
 
 <script src="scripts.js"></script>
 </body>
