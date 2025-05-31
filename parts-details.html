@@ -73,6 +73,22 @@
 
 
   <script>
+    const parts = [
+      { id: 1, name: "Brakes and Brake Pads", category: "Brakes", price: 60, description: "High quality pads and discs.", image: "images/spare/brakes.jpg", sellerPhone: "+254718604573" },
+      { id: 2, name: "Car Battery", category: "Batteries", price: 90, description: "12V maintenance-free battery.", image: "images/spare/battery.jpg", sellerPhone: "+254712345679" },
+      { id: 3, name: "All-Terrain Tire", category: "Tires", price: 85, description: "Durable for all surfaces.", image: "images/spare/tire.jpg", sellerPhone: "+254712345670" },
+      { id: 4, name: "Starter Motor", category: "Alternators", price: 120, description: "Powerful and reliable start.", image: "images/spare/starter.png", sellerPhone: "+254712345671" },
+      { id: 5, name: "Fuel Filter", category: "Fuel", price: 25, description: "Clean and efficient fuel flow.", image: "images/spare/fuel-filter.jpg", sellerPhone: "+254712345672" },
+      { id: 6, name: "Radiator", category: "Cooling", price: 130, description: "Keeps engine cool.", image: "images/spare/radiator.webp", sellerPhone: "+254712345673" },
+      { id: 7, name: "Serpentine Belt", category: "Belts", price: 20, description: "Drives multiple engine accessories.", image: "images/spare/belt.jpg", sellerPhone: "+254712345678" },
+      { id: 8, name: "Ignition Coil", category: "Ignition", price: 35, description: "Delivers spark to the engine.", image: "images/spare/ignition-coil.jpg", sellerPhone: "+254712345674" },
+      { id: 9, name: "Muffler", category: "Exhaust", price: 60, description: "Reduces exhaust noise.", image: "images/spare/muffler.webp", sellerPhone: "+254712345675" },
+      { id: 10, name: "Shock Absorber", category: "Shocks", price: 75, description: "Smooths out your ride.", image: "images/spare/shock.jpg", sellerPhone: "+254712345677" }
+    ];
+
+    function getSparePartById(id) {
+    return parts.find(p => p.id === parseInt(id));
+      
     document.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
       const partId = params.get("id");
@@ -86,7 +102,7 @@
 
   container.innerHTML = `
   <div class="product-detail-card">
-    <img src="${part.img}" alt="${part.name}" />
+    <img src="${part.image}" alt="${part.name}" />
     <div class="product-info">
       <h2>${part.name}</h2>
       <p><strong>Category:</strong> ${part.category}</p>
