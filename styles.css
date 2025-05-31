@@ -94,8 +94,23 @@ header {
   align-items: center;
   padding: 10px 20px;
   font-size: 0.9rem;
-  background-color: #c0c0c0; /* Silver */
+  background-color: #003366; /* Dark blue */
+  color: white;              /* Text color for contrast */
+  font-size: 18px;           /* Increase font size */
   text-align: center;
+}
+
+/* Optional: styling for links inside the top bar */
+.top-bar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+/* Optional: on hover */
+.top-bar a:hover {
+  text-decoration: underline;
 }
 
 .top-left, .top-center, .top-right {
