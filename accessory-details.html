@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accessory Details - Carjo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="logo">Carjo</div>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+  </nav>
+</header>
+
+<div id="accessoryDetails">
+  <img id="accessoryImage" src="" alt="Accessory Image" loading="lazy">
+  <h2 id="accessoryName">Loading...</h2>
+  <p id="accessoryDescription"></p>
+  <p id="accessoryPrice"></p>
+  <a id="accessoryWhatsappLink" href="#" target="_blank" class="whatsapp-chat-btn">Chat with Seller</a>
+  <button id="addToCartButton">Add to Cart</button>
+</div>
+
+<script>
+  const accessories = [
+    {
+      id: 101,
+      name: "Alloy Rims",
+      description: "High-quality alloy rims for smooth rides.",
+      price: 120,
+      image: "images/accessories/alloy.jpg",
+      sellerPhone: "254722333444"
+    }
+  ];
+
+  const id = parseInt(new URLSearchParams(window.location.search).get('id'));
+  const item = accessories.find(a => a.id === id);
+
+  if (!item) {
+    document.getElementById("accessoryDetails").innerHTML = "<p>Accessory not found.</p>";
+  } else {
+    document.getElementById("accessoryImage").src = item.image;
+    document.getElementById("accessoryName").textContent = item.name;
+    document.getElementById("accessoryDescription").textContent = item.description;
+    document.getElementById("accessoryPrice").textContent = `Price: $${item.price}`;
+    document.getElementById("accessoryWhatsappLink").href = `https://wa.me/${item.sellerPhone}?text=Hi, I'm interested in the ${item.name} on Carjo.`;
+  }
+</script>
+
+<script src="scripts.js"></script>
+</body>
+</html>
