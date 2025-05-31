@@ -43,6 +43,8 @@
         id: 1,
         name: "Toyota Corolla",
         price: 45,
+        brand: "Toyota",
+        fuel: "Petrol",
         image: "images/cars/bmw-x5.avif",
         description: "Reliable and fuel-efficient sedan.",
         sellerPhone: "+254701112233"
@@ -51,6 +53,8 @@
         id: 2,
         name: "Honda Accord",
         price: 50,
+        brand: "Honda",
+        fuel: "Diesel",
         image: "images/cars/honda-accord.avif",
         description: "Sporty design with great handling.",
         sellerPhone: "+254701112234"
@@ -59,6 +63,8 @@
         id: 3,
         name: "Tesla Model 3",
         price: 80,
+        brand:"Tesla",
+        fuel: "Hybrid",
         image: "images/cars/tesla-model3.avif",
         description: "Electric performance with high-tech features.",
         sellerPhone: "+254701112235"
@@ -67,6 +73,8 @@
         id: 4,
         name: "Tesla Modelx",
         price: 80,
+        brand: "Tesla",
+        fuel: "Electric",
         image: "images/cars/tesla-modelx.avif",
         description: "Spacious SUV for families or groups.",
         sellerPhone: "+254701112236"
@@ -75,6 +83,8 @@
         id: 5,
         name: "Toyota Prius",
         price: 80,
+        brand: "Toyota",
+        fuel: "Petrol",
         image: "images/cars/toyota-prius.avif",
         description: "Efficient hybrid with advanced tech.",
         sellerPhone: "+254701112237"
@@ -89,11 +99,15 @@
   } else {
     document.getElementById("carImage").src = car.image;
     document.getElementById("carName").textContent = car.name;
+    document.getElementById("addToCartButton").addEventListener("click", () => {
+      addCarToCart(car.id);});
     document.getElementById("carBrand").textContent = `Brand: ${car.brand}`;
     document.getElementById("carPrice").textContent = `Price: $${car.price}/day`;
     document.getElementById("carFuel").textContent = `Fuel: ${car.fuel}`;
     document.getElementById("whatsappLink").href = `https://wa.me/${car.sellerPhone}?text=Hi, I'm interested in your ${car.name} on Carjo.`;
   }
+  if (typeof updateCartCount === "function") updateCartCount();
+
 </script>
 
 <script src="scripts.js"></script>
