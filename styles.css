@@ -365,6 +365,12 @@ button:hover {
   text-align: center;
 }
 
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .whatsapp-chat-btn {
   display: inline-block;
   margin-top: 1rem;
