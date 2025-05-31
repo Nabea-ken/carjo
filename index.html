@@ -126,39 +126,50 @@
         name: "Toyota Corolla",
         price: 45,
         image: "images/cars/bmw-x5.avif",
-        description: "Reliable and fuel-efficient sedan."
+        description: "Reliable and fuel-efficient sedan.",
+        sellerPhone: "+254701112233"
       },
       {
         id: 2,
         name: "Honda Accord",
         price: 50,
         image: "images/cars/honda-accord.avif",
-        description: "Sporty design with great handling."
+        description: "Sporty design with great handling.",
+        sellerPhone: "+254701112234"
       },
       {
         id: 3,
         name: "Tesla Model 3",
         price: 80,
         image: "images/cars/tesla-model3.avif",
-        description: "Electric performance with high-tech features."
+        description: "Electric performance with high-tech features.",
+        sellerPhone: "+254701112235"
       },
        {
         id: 4,
         name: "Tesla Modelx",
         price: 80,
         image: "images/cars/tesla-modelx.avif",
-        description: "Spacious SUV for families or groups."
+        description: "Spacious SUV for families or groups.",
+        sellerPhone: "+254701112236"
       },
       {
         id: 5,
         name: "Toyota Prius",
         price: 80,
         image: "images/cars/toyota-prius.avif",
-        description: "Efficient hybrid with advanced tech."
+        description: "Efficient hybrid with advanced tech.",
+        sellerPhone: "+254701112237"
       }
     ];
 
-    function renderCars(carList = cars) {
+      function chatWithSeller(phone, message) {
+       const encodedMessage = encodeURIComponent(message);
+       const cleanPhone = phone.replace(/\D/g, ''); // remove non-numeric characters
+       const url = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
+      window.open(url, '_blank');
+     }    
+      function renderCars(carList = cars) {
       const container = document.getElementById("car-list");
       container.innerHTML = "";
       carList.forEach((car) => {
@@ -174,6 +185,9 @@
           <p>${car.description}</p>
           <p><strong>$${car.price}/day</strong></p>
           <button onclick="addToCart('${car.name}', ${car.price})">Add to Cart</button>
+          <button onclick="chatWithSeller('${car.sellerPhone}', 'Hi, I\'m interested in the ${car.name}. Is it available?')">
+             Chat with Seller
+          </button>
         `;
         container.appendChild(card);
       });
