@@ -1,56 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <!-- Meta SEO -->
+  <meta name="description" content="Carjo is your trusted platform for car rentals, accessories, and spare parts. Easy search, affordable prices, and secure checkout.">
+  <meta name="keywords" content="Car accessories, auto parts, car gadgets, Carjo, Kenya car market">
+  <meta name="author" content="Carjo Team">
+  <meta property="og:title" content="Carjo - Rent, Buy, Accessorize" />
+  <meta property="og:description" content="Find your dream car or genuine accessories on Carjo. Reliable. Affordable. Fast." />
+  <meta property="og:image" content="carjo-logo.png" />
+  <meta property="og:url" content="https://yourdomain.com" /> 
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accessory Details - Carjo</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="scripts.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
-  <div class="logo">Carjo</div>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+  <h1>Carjo</h1>
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="accessories.html">Accessories</a>
+    <a href="spare-parts.html">Spare Parts</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart</a>
+    <a href="login.html">Login</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </nav>
+  <div id="userSection"></div>
 </header>
 
-<div id="accessoryDetails">
-  <img id="accessoryImage" src="" alt="Accessory Image" loading="lazy">
-  <h2 id="accessoryName">Loading...</h2>
-  <p id="accessoryDescription"></p>
-  <p id="accessoryPrice"></p>
-  <a id="accessoryWhatsappLink" href="#" target="_blank" class="whatsapp-chat-btn">Chat with Seller</a>
-  <button id="addToCartButton">Add to Cart</button>
-</div>
+<section class="product-detail" id="accessoryDetailContainer">
+  <!-- JS will populate this -->
+</section>
+
+<footer>
+  <div class="page-container">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>CARJO</h3>
+        <p>Your trusted hub for cars, parts, and accessories.</p>
+      </div>
+      <div class="footer-middle">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="accessories.html">Accessories</a></li>
+          <li><a href="spare-parts.html">Spare Parts</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <h4>Contact</h4>
+        <p>Email: support@carjo.com</p>
+        <p>Phone: +123 456 7890</p>
+        <p><a href="help.html">Help Center</a></p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Carjo. All rights reserved.</p>
+  </div>
+</footer>
 
 <script>
-  const accessories = [
-    {
-      id: 101,
-      name: "Alloy Rims",
-      description: "High-quality alloy rims for smooth rides.",
-      price: 120,
-      image: "images/accessories/alloy.jpg",
-      sellerPhone: "254722333444"
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const accessoryId = params.get("id");
+    const accessory = getAccessoryById(accessoryId); // You must define this in scripts.js
+    const container = document.getElementById("accessoryDetailContainer");
+
+    if (!accessory) {
+      container.innerHTML = "<p>Accessory not found.</p>";
+      return;
     }
-  ];
 
-  const id = parseInt(new URLSearchParams(window.location.search).get('id'));
-  const item = accessories.find(a => a.id === id);
-
-  if (!item) {
-    document.getElementById("accessoryDetails").innerHTML = "<p>Accessory not found.</p>";
-  } else {
-    document.getElementById("accessoryImage").src = item.image;
-    document.getElementById("accessoryName").textContent = item.name;
-    document.getElementById("accessoryDescription").textContent = item.description;
-    document.getElementById("accessoryPrice").textContent = `Price: $${item.price}`;
-    document.getElementById("accessoryWhatsappLink").href = `https://wa.me/${item.sellerPhone}?text=Hi, I'm interested in the ${item.name} on Carjo.`;
-  }
+    container.innerHTML = `
+      <div class="product-detail-card">
+        <img src="${accessory.img}" alt="${accessory.name}" />
+        <div class="product-info">
+          <h2>${accessory.name}</h2>
+          <p><strong>Type:</strong> ${accessory.type}</p>
+          <p><strong>Description:</strong> ${accessory.description}</p>
+          <p><strong>Price:</strong> $${accessory.price}</p>
+          <button onclick="addAccessoryToCart(${accessory.id})">Add to Cart</button>
+        </div>
+      </div>
+    `;
+  });
 </script>
 
-<script src="scripts.js"></script>
 </body>
 </html>
