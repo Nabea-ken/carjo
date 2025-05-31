@@ -37,6 +37,13 @@
     </nav>
     <div id="userSection"></div>
   </header>
+  
+  <nav class="breadcrumb" id="breadcrumbNav">
+  <a href="index.html">Home</a> &gt;
+  <a href="spare-parts.html">Spare Parts</a> &gt;
+  <span id="breadcrumbCurrent">Loading...</span>
+  </nav>
+
 
   <section class="product-detail" id="partDetailContainer">
     <!-- JS will populate this -->
@@ -99,7 +106,9 @@
         container.innerHTML = "<p>Spare part not found.</p>";
         return;
       }
-
+  // Update breadcrumb with part name
+  document.getElementById("breadcrumbCurrent").textContent = part.name;
+      
   container.innerHTML = `
   <div class="product-detail-card">
     <img src="${part.image}" alt="${part.name}" />
