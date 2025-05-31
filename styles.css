@@ -359,6 +359,27 @@ button:hover {
   cursor: pointer;
 }
 
+.product-detail {
+  max-width: 700px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.whatsapp-chat-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 12px 20px;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+.whatsapp-chat-btn:hover {
+  background-color: #128C7E;
+}
+
 /* Cart Page */
 .cart-page {
   max-width: 800px;
