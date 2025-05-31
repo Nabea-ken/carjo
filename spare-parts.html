@@ -139,6 +139,7 @@ function renderParts(filteredParts) {
     card = document.createElement('div');
     card.className = 'product-card';
 card.innerHTML = `
+<a href="parts-details.html?id=${part.id}" class="product-link">
   <picture>
     <source srcset="${part.image.replace('.jpg', '.avif')}" type="image/avif">
     <source srcset="${part.image.replace('.jpg', '.webp')}" type="image/webp">
