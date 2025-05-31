@@ -84,18 +84,22 @@
         return;
       }
 
-      container.innerHTML = `
-        <div class="product-detail-card">
-          <img src="${part.img}" alt="${part.name}" />
-          <div class="product-info">
-            <h2>${part.name}</h2>
-            <p><strong>Category:</strong> ${part.category}</p>
-            <p><strong>Description:</strong> ${part.description}</p>
-            <p><strong>Price:</strong> $${part.price}</p>
-            <button onclick="addSpareToCart(${part.id})">Add to Cart</button>
-          </div>
-        </div>
-      `;
+  container.innerHTML = `
+  <div class="product-detail-card">
+    <img src="${part.img}" alt="${part.name}" />
+    <div class="product-info">
+      <h2>${part.name}</h2>
+      <p><strong>Category:</strong> ${part.category}</p>
+      <p><strong>Description:</strong> ${part.description}</p>
+      <p><strong>Price:</strong> $${part.price}</p>
+      <a href="https://wa.me/${part.sellerPhone}?text=Hi, I'm interested in the spare part *${part.name}* listed on Carjo." 
+         target="_blank" class="whatsapp-chat-btn">
+         Chat with Seller
+      </a>
+      <button onclick="addSpareToCart(${part.id})">Add to Cart</button>
+    </div>
+  </div>
+`;
     });
   </script>
 </body>
