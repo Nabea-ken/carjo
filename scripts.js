@@ -68,7 +68,11 @@ function addSpareToCart(id) {
     alert("Spare part not found.");
     return;
   }
-
+  
+  // Get current cart or start new one
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+  // Check if part already exists in cart
   const existing = cart.find(item => item.id == id && item.type === "spare");
 
   if (existing) {
@@ -77,6 +81,7 @@ function addSpareToCart(id) {
     cart.push({ ...part, quantity: 1, type: "spare" });
   }
 
+  // Save updated cart
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
   alert(`${part.name} added to cart.`);
