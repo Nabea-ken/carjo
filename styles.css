@@ -223,24 +223,30 @@ header {
 }
 
 .breadcrumb {
-  font-size: 0.95rem;
-  color: #555;
-  margin: 1rem 2rem;
-  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  padding: 10px 15px;
+  white-space: nowrap;
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
-.breadcrumb a {
-  color: orange;
+.breadcrumb a,
+.breadcrumb span {
   text-decoration: none;
-  margin-right: 0.3rem;
+  color: #333;
 }
 
 .breadcrumb a:hover {
   text-decoration: underline;
 }
 
-.breadcrumb span {
-  color: #333;
+@media (max-width: 600px) {
+  .breadcrumb {
+    font-size: 0.85rem;
+    gap: 3px;
+  }
 }
 
 /* Product Grids */
@@ -346,17 +352,19 @@ button:hover {
 .product-detail-card {
   display: flex;
   flex-direction: column;
-  max-width: 900px;
-  background: white;
-  border-radius: 12px;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: visible;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
-  padding: 1.5rem;
-  gap: 1.5rem;
+  padding: 20px;
+  gap: 15px;
+  margin: 20px auto;
 }
 
 .product-detail-card img {
-  width: 100%;
+  max-width: 100%;
   max-height: 400px;
   object-fit: cover;
   border-radius: 10px;
@@ -365,7 +373,8 @@ button:hover {
 .product-info {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 10px;
+  flex: 1;
 }
 
 .product-info h2 {
@@ -413,6 +422,16 @@ button:hover {
   .product-info {
     width: 50%;
     padding-left: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .product-detail-card {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .product-info h2 {
+    font-size: 1.2rem;
   }
 }
 
