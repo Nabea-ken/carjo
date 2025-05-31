@@ -222,6 +222,27 @@ header {
   }
 }
 
+.breadcrumb {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 1rem 2rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.breadcrumb a {
+  color: orange;
+  text-decoration: none;
+  margin-right: 0.3rem;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #333;
+}
+
 /* Product Grids */
 .products-grid {
   display: grid;
