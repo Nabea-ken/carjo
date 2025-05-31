@@ -56,13 +56,22 @@
       <p>After payment, please fill in the form below to confirm your transaction:</p>
 
       <h3>Confirm Your Payment</h3>
-      <form id="paymentConfirmationForm">
-        <input type="text" name="name" placeholder="Your Full Name" required />
-        <input type="tel" name="phone" placeholder="M-Pesa Number" required />
-        <input type="text" name="transactionCode" placeholder="M-Pesa Code (e.g. QJ123ABC)" required />
-        <textarea name="notes" placeholder="Additional Notes (optional)" rows="3"></textarea>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLScKg1wjm9E5xJNRmakhwnhTrsLG1cKpClaij_l6Yy3NebLeMA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+        <label for="fullName">Full Name:</label>
+        <input type="text" name="entry.2005620554" id="fullName" required>
+
+        <label for="mpesaNumber">M-Pesa Number:</label>
+        <input type="tel" name="entry.1045781291" id="mpesaNumber" required>
+
+        <label for="transactionCode">Transaction Code:</label>
+        <input type="text" name="entry.1065046570" id="transactionCode" required>
+
+        <label for="notes">Notes:</label>
+        <textarea name="entry.1166974658" id="notes"></textarea>
+
         <button type="submit">Confirm Payment</button>
-      </form>
+<    </form>
+      <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) { alert('Thank you! Your payment has been submitted.'); }"></iframe>
     </section>
   </main>
 
@@ -114,12 +123,16 @@
     }
 
     // Handle form submission
-    document.getElementById("paymentConfirmationForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Thank you! Your payment has been submitted and is under review.");
-      localStorage.removeItem("cart");
-      window.location.href = "thank-you.html";
-    });
+    let submitted = false;
+  document.getElementById("paymentConfirmationForm").addEventListener("submit", function () {
+    setTimeout(function () {
+      if (submitted) {
+        alert("Thank you! Your payment has been submitted.");
+        localStorage.removeItem("cart");
+        window.location.href = "thank-you.html";
+      }
+    }, 1000);
+  });
   </script>
 
 </body>
