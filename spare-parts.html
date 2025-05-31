@@ -143,7 +143,8 @@ card.innerHTML = `
   <picture>
     <source srcset="${part.image.replace('.jpg', '.avif')}" type="image/avif">
     <source srcset="${part.image.replace('.jpg', '.webp')}" type="image/webp">
-    <img src="${part.image}" alt="${part.name}" width="300" height="200" loading="lazy" />
+    <img src="${part.image}" alt="${part.name}" width="300" height="200" loading="lazy"
+     onerror="this.onerror=null;this.src='${imageBase}.jpg';" />
   </picture>
   <h3>${part.name}</h3>
   <p>${part.description}</p>
