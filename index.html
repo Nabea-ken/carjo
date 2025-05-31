@@ -184,6 +184,7 @@
           <h3>${car.name}</h3>
           <p>${car.description}</p>
           <p><strong>$${car.price}/day</strong></p>
+          <a href="car-details.html?id=${car.id}&type=car" class="details-link">View Details</a>
           <button onclick="addToCart('${car.name}', ${car.price})">Add to Cart</button>
           <button onclick="chatWithSeller('${car.sellerPhone}', 'Hi, I\'m interested in the ${car.name}. Is it available?')">
              Chat with Seller
