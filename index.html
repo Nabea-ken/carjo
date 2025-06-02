@@ -1,249 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta SEO -->
-<meta name="description" content="Carjo is your trusted platform for car rentals, accessories, and spare parts. Easy search, affordable prices, and secure checkout.">
-<meta name="keywords" content="Car rentals, auto accessories, car parts, car sales, spare parts, Kenya cars, Carjo">
-<meta name="author" content="Carjo Team">
-<meta property="og:title" content="Carjo - Rent, Buy, Accessorize" />
-<meta property="og:description" content="Find your dream car or genuine spare parts on Carjo. Reliable. Affordable. Fast." />
-<meta property="og:image" content="carjo-logo.png" />
-<meta property="og:url" content="https://yourdomain.com" />
-<meta name="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carjo is your trusted platform for spare parts, accessories, car sales, and rentals. Easy search, affordable prices, and secure checkout.">
+  <meta name="keywords" content="Spare parts, accessories, car sales, car rentals, Carjo Kenya">
+  <meta name="author" content="Carjo Team">
+  <meta property="og:title" content="Carjo - Spare Parts, Accessories, Sales & Rentals" />
+  <meta property="og:description" content="Find spare parts, car accessories, and your next vehicle at Carjo." />
+  <meta property="og:image" content="carjo-logo.png" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>Carjo - Home</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="scripts.js" defer></script>
-<link rel="preload" as="image" href="images/cars/bmw-x5.avif" type="image/avif">
-
 </head>
 <body>
 
-  <!-- Top Bar -->
   <!-- Header -->
   <header>
-  <div class="header-centered">
-    <div class="logo-nav">
-      <a href="index.html" class="logo">
-        <img src="carjo-logo.png" alt="Carjo automotive brand logo" class="logo-img" width="55" height="55">
-        <span class="logo-text">CARJO</span>
-      </a>
-      <nav class="main-nav" id="navMenu">
-        <a href="index.html">Home</a>
-        <a href="accessories.html">Accessories</a>
-        <a href="spare-parts.html">Spare Parts</a>
-        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <div class="header-centered">
+      <div class="logo-nav">
+        <a href="index.html" class="logo">
+          <img src="carjo-logo.png" alt="Carjo Logo" class="logo-img" width="55" height="55">
+          <span class="logo-text">CARJO</span>
+        </a>
+        <nav class="main-nav" id="navMenu">
+          <a href="accessories.html">Accessories</a>
+          <a href="spare-parts.html">Spare Parts</a>
+          <a href="car-sales.html">Car Sales</a>
+          <a href="car-rentals.html">Car Rentals</a>
+          <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+        </nav>
+      </div>
     </div>
-  </div>
-</header>
-  
-<main class="page-container">
-  <!-- Hero -->
-<section class="what-we-offer">
-  <h2>What We Offer</h2>
-  <div class="offer-grid">
-  <a href="spare-parts.html" class="offer-item">🔧 Spare Parts</a>
-  <a href="accessories.html" class="offer-item">🧰 Car Accessories</a>
-  <a href="car-sales.html" class="offer-item">🚗 Vehicle Sales</a>
-  <a href="car-rentals.html" class="offer-item">📅 Car Rentals</a>
-</div>
-</section>
+  </header>
 
-    <!-- Filters -->
-  <div class="filters">
-    <select id="brandFilter">
-      <option value="">All Brands</option>
-    </select>
-    <select id="fuelFilter">
-      <option value="">All Fuel Types</option>
-      <option value="Petrol">Petrol</option>
-      <option value="Diesel">Diesel</option>
-      <option value="Electric">Electric</option>
-      <option value="Hybrid">Hybrid</option>
-    </select>
-    <input type="number" id="yearFilter" placeholder="Min Year" />
-    <input type="number" id="priceFilter" placeholder="Max Price" />
-    <input type="text" id="searchInput" placeholder="Search by model" />
-    <button onclick="applyFilters()">Apply Filters</button>
-  </div>
+  <main class="page-container">
+    <!-- Hero Section -->
+    <section class="hero focused">
+      <div class="hero-text">
+        <h1>Auto Parts, Accessories & More</h1>
+        <p>Find quality spare parts and accessories. Car sales and rentals now at your convenience.</p>
+        <div class="hero-buttons">
+          <a href="spare-parts.html" class="btn primary">🔧 Spare Parts</a>
+          <a href="accessories.html" class="btn">🧰 Accessories</a>
+          <a href="car-sales.html" class="btn">🚗 Cars for Sale</a>
+          <a href="car-rentals.html" class="btn">📅 Rentals</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/hero-auto.avif" alt="Auto products banner" loading="lazy">
+      </div>
+    </section>
 
-  <!-- Car Listings -->
-    <section class="products-grid" id="car-list">
-      <!-- JavaScript will inject cars here -->
+    <!-- Product Categories -->
+    <section class="categories-section">
+      <h2>Browse Categories</h2>
+      <div class="featured-grid">
+        <a href="spare-parts.html" class="featured-item">
+          <img src="images/parts/placeholder-part.jpg" alt="Spare Parts">
+          <h3>Spare Parts</h3>
+        </a>
+        <a href="accessories.html" class="featured-item">
+          <img src="images/accessories/placeholder-accessory.jpg" alt="Accessories">
+          <h3>Accessories</h3>
+        </a>
+        <a href="car-sales.html" class="featured-item">
+          <img src="images/cars/bmw-x5.avif" alt="Cars for Sale">
+          <h3>Car Sales</h3>
+        </a>
+        <a href="car-rentals.html" class="featured-item">
+          <img src="images/cars/tesla-modelx.avif" alt="Rentals">
+          <h3>Car Rentals</h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+      <div class="page-container">
+        <h2>Why Choose Carjo?</h2>
+        <ul class="benefits">
+          <li>✅ Genuine spare parts and accessories</li>
+          <li>✅ Verified car sellers and renters</li>
+          <li>✅ Secure and easy checkout</li>
+          <li>✅ Trusted by thousands across Kenya</li>
+        </ul>
+      </div>
     </section>
   </main>
 
   <!-- Footer -->
-<footer>
-  <div class="page-container">
-    <div class="footer-content">
-      <div class="footer-left">
-        <h3>CARJO</h3>
-        <p>Your trusted hub for cars, parts, and accessories.</p>
+  <footer>
+    <div class="page-container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <h3>CARJO</h3>
+          <p>Your trusted hub for parts, accessories, and vehicles.</p>
+        </div>
+        <div class="footer-middle">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="spare-parts.html">Spare Parts</a></li>
+            <li><a href="car-sales.html">Car Sales</a></li>
+            <li><a href="car-rentals.html">Car Rentals</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <h4>Contact</h4>
+          <p>Email: support@carjo.com</p>
+          <p>Phone: +123 456 7890</p>
+          <p><a href="help.html">Help Center</a></p>
+        </div>
       </div>
-      <div class="footer-middle">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="accessories.html">Accessories</a></li>
-          <li><a href="spare-parts.html">Spare Parts</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </div>
-      <div class="footer-right">
-        <h4>Contact</h4>
-        <p>Email: support@carjo.com</p>
-        <p>Phone: +123 456 7890</p>
-        <p><a href="help.html">Help Center</a></p>
-      </div>
+      <p class="footer-bottom">&copy; 2025 Carjo. All rights reserved.</p>
     </div>
-
-    <p class="footer-bottom">&copy; 2025 Carjo. All rights reserved.</p>
-  </div>
-</footer>
-
+  </footer>
 
   <!-- Scripts -->
   <script src="scripts.js" defer></script>
-  <script defer>
-    const cars = [
-      {
-        id: 1,
-        name: "Toyota Corolla",
-        price: 45,
-        image: "images/cars/bmw-x5.avif",
-        brand: "Toyota",
-        fuelType: "Petrol",
-        year: 2021,
-        description: "Reliable and fuel-efficient sedan.",
-        sellerPhone: "+254701112233"
-      },
-      {
-        id: 2,
-        name: "Honda Accord",
-        price: 50,
-        image: "images/cars/honda-accord.avif",
-        brand: "Honda",
-        fuelType: "Petrol",
-        year: 2020,
-        description: "Sporty design with great handling.",
-        sellerPhone: "+254701112234"
-      },
-      {
-        id: 3,
-        name: "Tesla Model 3",
-        price: 80,
-        image: "images/cars/tesla-model3.avif",
-        brand: "Tesla",
-        fuelType: "Electric",
-        year: 2020, 
-        description: "Electric performance with high-tech features.",
-        sellerPhone: "+254701112235"
-      },
-       {
-        id: 4,
-        name: "Tesla Modelx",
-        price: 80,
-        image: "images/cars/tesla-modelx.avif",
-        brand: "Tesla",
-        fuelType: "Electric",
-        year: 2020,
-        description: "Spacious SUV for families or groups.",
-        sellerPhone: "+254701112236"
-      },
-      {
-        id: 5,
-        name: "Toyota Prius",
-        price: 80,
-        image: "images/cars/toyota-prius.avif",
-        brand: "Toyota",
-        fuelType: "Hybrid",
-        year: 2018,
-        description: "Efficient hybrid with advanced tech.",
-        sellerPhone: "+254701112237"
-      }
-    ];
- 
-      function renderCars(carList = cars) {
-      const container = document.getElementById("car-list");
-      container.innerHTML = "";
-      carList.forEach((car) => {
-        const card = document.createElement("div");
-        card.className = "car-card";
-        card.innerHTML = `
-    <picture>
-       <source srcset="${car.image.replace(/\.(jpg|jpeg|png|webp|avif)/, '.avif')}" type="image/avif">
-       <source srcset="${car.image.replace(/\.(jpg|jpeg|png|webp|avif)/, '.webp')}" type="image/webp">
-       <img src="${car.image}" alt="${car.name}" width="300" height="200" />
-    </picture>
-          <h3>${car.name}</h3>
-          <p>${car.description}</p>
-          <p><strong>$${car.price}/day</strong></p>
-          <a href="car-details.html?id=${car.id}&type=car" class="details-link">View Details</a>
-          <button onclick="addToCart('${car.name}', ${car.price})">Add to Cart</button>
-          <button onclick="chatWithSeller('${car.sellerPhone}', 'Hi, I\'m interested in the ${car.name}. Is it available?')">
-             Chat with Seller
-          </button>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    function addToCart(name, price) {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      cart.push({ name, price });
-      localStorage.setItem("cart", JSON.stringify(cart));
-      updateCartCount(); // Update the cart count immediately
-      alert(`${name} added to cart.`);
-    }
-      
-function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    document.getElementById("cartCount").textContent = cart.length;
-  }
-  window.addEventListener("DOMContentLoaded", updateCartCount);
-    function toggleMenu() {
-      document.getElementById("navMenu").classList.toggle("show");
-    }
-
-    function applyFilters() {
-      const brand = document.getElementById("brandFilter").value;
-      const fuel = document.getElementById("fuelFilter").value;
-      const year = parseInt(document.getElementById("yearFilter").value);
-
-      const filtered = cars.filter(car => {
-         return (
-           (!search || car.name.toLowerCase().includes(search)) &&
-           (!maxPrice || car.price <= maxPrice) &&
-           (!brand || car.name.toLowerCase().includes(brand.toLowerCase())) &&
-           (!fuel || car.fuelType === fuel) && // You'll need to add fuelType to car objects
-           (!year || car.year >= year) // You'll need to add year to car objects
-        );
-      });
-      renderCars(filtered);
-    }
-
-    window.addEventListener("load", () => {
-      renderCars();
-    });
+  <script>
+    updateCartCount();
   </script>
-    <!--Start of Tawk.to Script-->
-       <script type="text/javascript">
-         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-         (function(){
-         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/683d54e4fe4b1e190fee5b5f/1isnp77rv';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-       })();
-    </script>
-    <!--End of Tawk.to Script-->
+
+  <!-- Tawk.to -->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/683d54e4fe4b1e190fee5b5f/1isnp77rv';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
 </body>
 </html>
