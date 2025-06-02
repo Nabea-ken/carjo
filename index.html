@@ -22,15 +22,6 @@
 <body>
 
   <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="top-left">
-      <a href="become-seller.html">Become a Seller</a>
-    </div>
-    <div class="top-right">
-      <a href="help.html">Help Center</a>
-    </div>
-  </div>
-
   <!-- Header -->
   <header>
   <div class="header-centered">
@@ -43,27 +34,26 @@
         <a href="index.html">Home</a>
         <a href="accessories.html">Accessories</a>
         <a href="spare-parts.html">Spare Parts</a>
-        <a href="orders.html">Orders</a>
         <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
-        <a href="login.html">Login</a>
-        <a href="blog.html">Blog</a>
-        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </div>
 </header>
-
   
 <main class="page-container">
   <!-- Hero -->
-  <section class="hero">
-    <h1>Find Your Dream Car</h1>
-    <p>Buy, Rent or Hire the best cars at Carjo.</p>
-    <a href="#car-list" class="cta-btn">Browse Cars</a>
-  </section>
+<section class="what-we-offer">
+  <h2>What We Offer</h2>
+  <div class="offer-grid">
+    <div class="offer-item">🔧 Spare Parts</div>
+    <div class="offer-item">🧰 Car Accessories</div>
+    <div class="offer-item">🚗 Vehicle Sales</div>
+    <div class="offer-item">📅 Car Rentals</div>
+  </div>
+</section>
 
-  <!-- Filters -->
+    <!-- Filters -->
   <div class="filters">
     <select id="brandFilter">
       <option value="">All Brands</option>
@@ -178,13 +168,7 @@
         sellerPhone: "+254701112237"
       }
     ];
-
-      function chatWithSeller(phone, message) {
-       const encodedMessage = encodeURIComponent(message);
-       const cleanPhone = phone.replace(/\D/g, ''); // remove non-numeric characters
-       const url = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
-      window.open(url, '_blank');
-     }    
+ 
       function renderCars(carList = cars) {
       const container = document.getElementById("car-list");
       container.innerHTML = "";
@@ -248,5 +232,18 @@ function updateCartCount() {
       renderCars();
     });
   </script>
+    <!--Start of Tawk.to Script-->
+       <script type="text/javascript">
+         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+         (function(){
+         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/683d54e4fe4b1e190fee5b5f/1isnp77rv';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+       })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>
