@@ -1,0 +1,264 @@
+// ------------------------
+// 1. VARIABLES
+// ------------------------
+$color-primary: #ff6600;
+$color-secondary: #f3f3f3;
+$color-dark: #1a1a1a;
+$color-light: #ffffff;
+$color-border: #e5e7eb;
+$color-accent: #ffddcc;
+
+$font-family-base: 'Poppins', sans-serif;
+$font-size-base: 16px;
+
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 40px;
+
+// ------------------------
+// 2. MIXINS
+// ------------------------
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin button($bg: $color-primary, $color: $color-light) {
+  padding: $spacing-sm $spacing-md;
+  background-color: $bg;
+  color: $color;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: darken($bg, 10%);
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: 640px) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (max-width: 768px) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (max-width: 1024px) { @content; }
+  }
+}
+
+// ------------------------
+// 3. GLOBAL STYLES
+// ------------------------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  background-color: $color-light;
+  color: $color-dark;
+  line-height: 1.6;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ------------------------
+// 4. LAYOUT STRUCTURE
+// ------------------------
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.header {
+  background-color: $color-light;
+  border-bottom: 1px solid $color-border;
+
+  .topbar {
+    @include flex-between;
+    padding: $spacing-sm $spacing-md;
+    font-size: 14px;
+    background-color: $color-secondary;
+  }
+
+  .navbar {
+    @include flex-between;
+    padding: $spacing-md;
+
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+      color: $color-primary;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: $spacing-lg;
+
+      a {
+        font-weight: 500;
+        color: $color-dark;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  background-color: $color-accent;
+  padding: $spacing-xl 0;
+
+  .content {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      max-width: 600px;
+      margin-bottom: $spacing-lg;
+    }
+
+    .btn-primary {
+      @include button;
+    }
+  }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-lg;
+  margin: $spacing-xl 0;
+
+  @include responsive(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive(sm) {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    background-color: $color-light;
+    border: 1px solid $color-border;
+    border-radius: 12px;
+    padding: $spacing-md;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .info {
+      margin-top: $spacing-sm;
+
+      h4 {
+        font-size: 1.125rem;
+        margin-bottom: $spacing-xs;
+      }
+
+      p {
+        color: #666;
+        font-size: 14px;
+      }
+
+      .price {
+        color: $color-primary;
+        font-weight: bold;
+        margin-top: $spacing-sm;
+      }
+    }
+
+    .btn {
+      margin-top: $spacing-md;
+      width: 100%;
+      @include button;
+    }
+  }
+}
+
+.footer {
+  background-color: $color-dark;
+  color: $color-light;
+  padding: $spacing-xl $spacing-md;
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: $spacing-lg;
+
+    .column {
+      flex: 1 1 200px;
+
+      h4 {
+        margin-bottom: $spacing-sm;
+        font-size: 1rem;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          margin-bottom: $spacing-xs;
+          font-size: 14px;
+
+          a {
+            color: $color-light;
+
+            &:hover {
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    text-align: center;
+    margin-top: $spacing-lg;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    padding-top: $spacing-sm;
+  }
+}
