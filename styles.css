@@ -10,6 +10,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: var(--light-bg);
   color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px;
 }
 
 img {
@@ -82,11 +84,12 @@ header {
   font-weight: 500;
 }
 
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a:focus {
   text-decoration: underline;
 }
 
-/* Top Bar */
+/* Top Bar 
 .top-bar {
   display: flex;
   flex-wrap: wrap;
@@ -94,13 +97,13 @@ header {
   align-items: center;
   padding: 10px 20px;
   font-size: 0.9rem;
-  background-color: #003366; /* Dark blue */
-  color: white;              /* Text color for contrast */
-  font-size: 18px;           /* Increase font size */
+  background-color: #003366; /* Dark blue 
+  color: white;              /* Text color for contrast 
+  font-size: 18px;           /* Increase font size 
   text-align: center;
 }
 
-/* Optional: styling for links inside the top bar */
+/* Optional: styling for links inside the top bar
 .top-bar a {
   color: white;
   text-decoration: none;
@@ -108,13 +111,13 @@ header {
   font-weight: bold;
 }
 
-/* Optional: on hover */
+/* Optional: on hover 
 .top-bar a:hover {
   text-decoration: underline;
 }
 
 .top-left, .top-center, .top-right {
-  flex: 1 1 100%; /* Stack on small screens */
+  flex: 1 1 100%; /* Stack on small screens 
   margin-bottom: 5px;
 }
 
@@ -124,7 +127,7 @@ header {
   }
 
   .top-left, .top-center, .top-right {
-    flex: 1 1 auto;     /* Side by side on wide screens */
+    flex: 1 1 auto;     /* Side by side on wide screens 
     margin-bottom: 0;
   }
 
@@ -139,6 +142,52 @@ header {
   .top-right {
     text-align: right;
   }
+}
+*/
+/* Accessibility: Focus states for form elements */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.3);
+}
+
+/* Accessibility: Increase color contrast if needed */
+@media (prefers-contrast: more) {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .top-bar {
+    background-color: #002244;
+  }
+
+  .main-nav a {
+    color: #ffffff;
+  }
+
+  .cta-btn,
+  button,
+  .remove-btn,
+}
+
+/* Utility: Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s ease-in-out;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* Page Container */
@@ -206,11 +255,17 @@ header {
   font-size: 1rem;
 }
 
-.category-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
+.category-buttons button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.category-buttons button:hover {
+  background-color: #e65100;
 }
 
 @media (max-width: 480px) {
@@ -445,21 +500,6 @@ button:hover {
   text-decoration: none;
   color: inherit;
   display: block;
-}
-
-.whatsapp-chat-btn {
-  display: inline-block;
-  background-color: #25D366;
-  color: white;
-  text-decoration: none;
-  padding: 0.7rem 1.2rem;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.whatsapp-chat-btn:hover {
-  background-color: #1da851;
 }
 
 /* Cart Page */
