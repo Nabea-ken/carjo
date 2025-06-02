@@ -127,6 +127,9 @@
         name: "Toyota Corolla",
         price: 45,
         image: "images/cars/bmw-x5.avif",
+        brand: "Toyota",
+        fuelType: "Petrol",
+        year: 2021,
         description: "Reliable and fuel-efficient sedan.",
         sellerPhone: "+254701112233"
       },
@@ -135,6 +138,9 @@
         name: "Honda Accord",
         price: 50,
         image: "images/cars/honda-accord.avif",
+        brand: "Honda",
+        fuelType: "Petrol",
+        year: 2020,
         description: "Sporty design with great handling.",
         sellerPhone: "+254701112234"
       },
@@ -143,6 +149,9 @@
         name: "Tesla Model 3",
         price: 80,
         image: "images/cars/tesla-model3.avif",
+        brand: "Tesla",
+        fuelType: "Electric",
+        year: 2020, 
         description: "Electric performance with high-tech features.",
         sellerPhone: "+254701112235"
       },
@@ -151,6 +160,9 @@
         name: "Tesla Modelx",
         price: 80,
         image: "images/cars/tesla-modelx.avif",
+        brand: "Tesla",
+        fuelType: "Electric",
+        year: 2020,
         description: "Spacious SUV for families or groups.",
         sellerPhone: "+254701112236"
       },
@@ -159,6 +171,9 @@
         name: "Toyota Prius",
         price: 80,
         image: "images/cars/toyota-prius.avif",
+        brand: "Toyota",
+        fuelType: "Hybrid",
+        year: 2018,
         description: "Efficient hybrid with advanced tech.",
         sellerPhone: "+254701112237"
       }
@@ -199,6 +214,7 @@
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
       cart.push({ name, price });
       localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount(); // Update the cart count immediately
       alert(`${name} added to cart.`);
     }
       
@@ -212,12 +228,17 @@ function updateCartCount() {
     }
 
     function applyFilters() {
-      const search = document.getElementById("searchInput").value.toLowerCase();
-      const maxPrice = parseFloat(document.getElementById("priceFilter").value);
+      const brand = document.getElementById("brandFilter").value;
+      const fuel = document.getElementById("fuelFilter").value;
+      const year = parseInt(document.getElementById("yearFilter").value);
+
       const filtered = cars.filter(car => {
-        return (
-          (!search || car.name.toLowerCase().includes(search)) &&
-          (!maxPrice || car.price <= maxPrice)
+         return (
+           (!search || car.name.toLowerCase().includes(search)) &&
+           (!maxPrice || car.price <= maxPrice) &&
+           (!brand || car.name.toLowerCase().includes(brand.toLowerCase())) &&
+           (!fuel || car.fuelType === fuel) && // You'll need to add fuelType to car objects
+           (!year || car.year >= year) // You'll need to add year to car objects
         );
       });
       renderCars(filtered);
