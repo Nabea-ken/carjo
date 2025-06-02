@@ -38,6 +38,33 @@ function getSparePartById(id) {
   return parts.find(part => part.id == id);
 }
 
+const allItems = document.querySelectorAll(".featured-item");
+const itemsPerPage = 6;
+let currentPage = 1;
+
+function paginate() {
+  allItems.forEach((item, i) => {
+    item.style.display = (i >= (currentPage - 1) * itemsPerPage && i < currentPage * itemsPerPage) ? "block" : "none";
+  });
+
+  const totalPages = Math.ceil(allItems.length / itemsPerPage);
+  const paginationDiv = document.getElementById("productPagination");
+  paginationDiv.innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.innerText = i;
+    btn.className = (i === currentPage) ? "active" : "";
+    btn.onclick = () => {
+      currentPage = i;
+      paginate();
+    };
+    paginationDiv.appendChild(btn);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", paginate);
+
 // ========== ADD TO CART ==========
 function addAccessoryToCart(id) {
   const accessories = JSON.parse(localStorage.getItem("accessories")) || [];
