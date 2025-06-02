@@ -56,21 +56,22 @@
       <p>After payment, please fill in the form below to confirm your transaction:</p>
 
       <h3>Confirm Your Payment</h3>
-      <form action="https://docs.google.com/forms/d/e/1FAIpQLScKg1wjm9E5xJNRmakhwnhTrsLG1cKpClaij_l6Yy3NebLeMA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-        <label for="fullName">Full Name:</label>
-        <input type="text" name="entry.2005620554" id="fullName" required>
+      <form id="checkoutForm">
+       <label for="name">Full Name:</label>
+       <input type="text" name="name" id="name" required />
 
-        <label for="mpesaNumber">M-Pesa Number:</label>
-        <input type="tel" name="entry.1045781291" id="mpesaNumber" required>
+       <label for="email">Email Address:</label>
+       <input type="email" name="email" id="email" required />
 
-        <label for="transactionCode">Transaction Code:</label>
-        <input type="text" name="entry.1065046570" id="transactionCode" required>
+       <label for="phone">Phone Number:</label>
+       <input type="tel" name="phone" id="phone" required pattern="\d{10}" placeholder="10-digit number" />
 
-        <label for="notes">Notes:</label>
-        <textarea name="entry.1166974658" id="notes"></textarea>
+       <label for="address">Shipping Address:</label>
+       <textarea name="address" id="address" required></textarea>
 
-        <button type="submit">Confirm Payment</button>
-<    </form>
+       <button type="submit">Checkout</button>
+       </form>
+
       <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) { alert('Thank you! Your payment has been submitted.'); }"></iframe>
     </section>
   </main>
