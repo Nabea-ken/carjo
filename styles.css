@@ -25,6 +25,9 @@ img {
   src: url('myfont.woff2') format('woff2');
   font-display: swap;
 }
+:focus {
+  transition: outline-offset 0.2s ease-in-out;
+}
 
 /* Header & Logo/Nav */
 header {
@@ -87,6 +90,21 @@ header {
 .main-nav a:hover,
 .main-nav a:focus {
   text-decoration: underline;
+}
+
+.chat-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.chat-btn:hover {
+  background-color: #e56c00;
 }
 
 /* Top Bar 
@@ -160,19 +178,9 @@ button:focus {
     background: #ffffff;
     color: #000000;
   }
-
-  .top-bar {
-    background-color: #002244;
-  }
-
   .main-nav a {
     color: #ffffff;
   }
-
-  .cta-btn,
-  button,
-  .remove-btn,
-}
 
 /* Utility: Skip to main content link */
 .skip-link {
@@ -198,6 +206,26 @@ button:focus {
 }
 
 /* Hero Section */
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.hero-links a {
+  color: white;
+  background-color: var(--primary-color);
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.hero-links a:hover {
+  background-color: #e56c00;
+}
+
 .hero {
   background: white;
   padding: 4rem 1rem;
@@ -602,6 +630,17 @@ button:hover {
     font-size: 1rem;
   }
 }
+  
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 /* Forms (Login, Register, Contact) */
 @media (max-width: 480px) {
@@ -613,11 +652,6 @@ button:hover {
   .form-container button {
     font-size: 1rem;
   }
-}
-
-.form-container {
-  max-width: 600px;
-  margin: 2rem auto;
 }
 
 .form-container {
@@ -909,4 +943,27 @@ footer {
   text-decoration: underline;
   background-color: #e65100;
 }
+  .offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.offer-item {
+  display: block;
+  text-decoration: none;
+  background: #f4f4f4;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: #333;
+  transition: background 0.3s ease;
+}
+
+.offer-item:hover {
+  background: #ff9900;
+  color: white;
+}
+
 
