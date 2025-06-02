@@ -1,0 +1,55 @@
+/* Top Bar 
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  background-color: #003366; /* Dark blue 
+  color: white;              /* Text color for contrast 
+  font-size: 18px;           /* Increase font size 
+  text-align: center;
+}
+
+/* Optional: styling for links inside the top bar
+.top-bar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+/* Optional: on hover 
+.top-bar a:hover {
+  text-decoration: underline;
+}
+
+.top-left, .top-center, .top-right {
+  flex: 1 1 100%; /* Stack on small screens 
+  margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  .top-bar {
+    flex-wrap: nowrap;
+  }
+
+  .top-left, .top-center, .top-right {
+    flex: 1 1 auto;     /* Side by side on wide screens 
+    margin-bottom: 0;
+  }
+
+  .top-left {
+    text-align: left;
+  }
+
+  .top-center {
+    text-align: center;
+  }
+
+  .top-right {
+    text-align: right;
+  }
+}
+*/
