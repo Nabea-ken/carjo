@@ -3,6 +3,7 @@
   --text-color: #333;
   --bg-color: #fff;
   --light-bg: #f9f9f9;
+  --primary-hover: #e65100;
 }
 
 body {
@@ -24,6 +25,25 @@ img {
   font-family: 'MyFont';
   src: url('myfont.woff2') format('woff2');
   font-display: swap;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: #eee;
+    --light-bg: #1e1e1e;
+  }
+
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  .product-card,
+  .product-detail-card {
+    background: #1e1e1e;
+    color: var(--text-color);
+  }
 }
 
 /* Header & Logo/Nav */
@@ -72,6 +92,20 @@ header {
   outline-offset: 2px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}
+
 .main-nav {
   display: flex;
   gap: 1rem;
@@ -103,6 +137,29 @@ header {
 
 .chat-btn:hover {
   background-color: #e56c00;
+}
+
+.featured-grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 600px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablets */
+  }
+}
+
+@media (min-width: 900px) {
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr); /* Desktops */
+  }
+}
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 /* Accessibility: Focus states for form elements */
@@ -177,7 +234,7 @@ button:focus {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   margin-bottom: 1rem;
 }
 
@@ -363,7 +420,7 @@ button {
 }
 
 button:hover {
-  background-color: #e65100;
+  background-color: var(--primary-hover);
 }
 
 /* Product Detail */
